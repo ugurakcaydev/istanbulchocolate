@@ -21,7 +21,7 @@ async function checkusers(name_id, password_id) {
     // let expiration = JSON.parse(localStorage.getItem("responseJson")).expiration
     // let isSuccess = JSON.parse(localStorage.getItem("responseJson")).isSuccess
     if (token) {
-        // window.location.href = "/home.html";
+        // window.location.href = "/home.html"; ana sayfaya yönlendirelecek
         Toastify({
             text: "Login successful",
             className: "info",
