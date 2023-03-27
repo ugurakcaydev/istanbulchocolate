@@ -25,7 +25,7 @@ async function checkusers(name_id, password_id) {
         Toastify({
             text: "Login successful",
             className: "info",
-            gravity: "bottom", // `top` or `bottom`
+            gravity: "top", // `top` or `bottom`
             position: "center", // `left`, `center` or `right`
             close: true,
             stopOnFocus: true,
