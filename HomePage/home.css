@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ececec;
+    color: white;
+    padding: 0.4rem 10rem;
+    border-bottom: 1px solid grey;
+}
+
+.brand-title {
+    width: 6rem;
+}
+
+.brand-title img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+    padding-top: 2rem;
+    font-size: 14px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.navbar-links li:not(:last-child) a::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 1rem;
+    background-color: #ccc;
+    margin: 0 0.8rem;
+}
+
+.navbar-links li:last-child a {
+    color: #2bacf7;
+}
+
+.navbar-links li a:hover {
+    color: #5598;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+@media(max-width:1100px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        overflow: hidden;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        text-align: center;
+        border-top: 1px solid grey;
+        padding: .5rem 0;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+        display: block;
+    }
+
+    .navbar-links li:not(:last-child) a::after {
+        display: none;
+    }
+
+    .brand-title {
+        padding: .5rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .upbot {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .leftbot {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .spans {
+        padding: 0.5rem 0 !important;
+    }
+
+    .left,
+    .right {
+        border-left: 1px dashed green;
+        border-right: 1px dashed green;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .footerbot {
+        padding: 0 !important;
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 52vh;
+}
+
+.swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+    color: bisque;
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background-color: rgb(252, 8, 0);
+}
+
+.botside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.upbot {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.footerbot {
+    width: 100%;
+    height: 41px;
+    border-top: 1px solid #828282;
+    border-bottom: 1px solid #828282;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 17%;
+}
+
+.footerbot h5 {
+    color: #c1c1c1;
+    font-size:14px;
+    
+}
+
+.footerbot h5::after {
+    content: "444 MADO";
+    color: #828282;
+    font-size: large;
+}
+
+.left,
+.center,
+.right {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.center {
+    border-left: 1px dashed gray;
+    border-right: 1px dashed gray;
+}
+
+.ltitle,
+.ctitle,
+.rtitle {
+    font-size: 1.5rem;
+    color: #c1c1c1;
+    margin-bottom: .5rem;
+}
+
+.ltitle::after {
+    content: " Yaşam";
+    color: #828282;
+}
+
+.ctitle::after {
+    content: " Mado";
+    color: #828282
+}
+
+.rtitle::after {
+    content: " Bu Güne";
+    color: #828282;
+}
+
+.upbot .image:first-child {
+    margin-left: 1rem;
+}
+
+.image img {
+    object-fit: cover;
+    width: 100%;
+    width: 13rem;
+    height: 7rem;
+    margin-right: 8px;
+}
+
+.spans {
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #828282;
+}
+
+.spans span:last-child {
+    width: 200px;
+    word-wrap: break-word;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #828282;
+}
+
+.leftbot {
+    display: flex;
+}
+
+.social {
+    display: flex;
+}
+
+.svg {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 100%;
+    margin: 6px;
+}
