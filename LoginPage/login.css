@@ -235,7 +235,7 @@ input:valid+.labelline {
     margin-bottom: 30px;
 }
 
-.login input {
+.login button {
     transition: 0.2s ease-in;
     background-color: antiquewhite;
     color: #000;
@@ -247,7 +247,7 @@ input:valid+.labelline {
     font-size: larger;
 }
 
-.login input:hover {
+.login button:hover {
     background-color: wheat;
     color: #80471c;
 
