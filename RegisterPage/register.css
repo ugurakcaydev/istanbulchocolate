@@ -31,8 +31,8 @@ body{
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 3px;
-  width: 30px;
+  height: 4px;
+  width: 150px;
   border-radius: 5px;
   background: linear-gradient(135deg, #3F0110, #4B0B0D, #5B1F07,#6F3203,#7B3E00);
 }
@@ -64,7 +64,7 @@ form .input-box span.details{
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #9b59b6;
+  border-color: #3F0110;
 }
  form .gender-details .gender-title{
   font-size: 20px;
@@ -93,7 +93,7 @@ form .input-box span.details{
  #dot-1:checked ~ .category label .one,
  #dot-2:checked ~ .category label .two,
  #dot-3:checked ~ .category label .three{
-   background: #9b59b6;
+   background: #3F0110;
    border-color: #d9d9d9;
  }
  form input[type="radio"]{
