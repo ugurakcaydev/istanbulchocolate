@@ -11,7 +11,7 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #7B3E00, #7B3E00);
+  background: linear-gradient(135deg, #3F0110, #4B0B0D, #5B1F07,#6F3203,#7B3E00);
 }
 .container{
   max-width: 700px;
@@ -34,7 +34,7 @@ body{
   height: 3px;
   width: 30px;
   border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(135deg, #3F0110, #4B0B0D, #5B1F07,#6F3203,#7B3E00);
 }
 .content form .user-details{
   display: flex;
@@ -114,11 +114,11 @@ form .input-box span.details{
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   background: linear-gradient(135deg, #3F0110, #4B0B0D, #5B1F07,#6F3203,#7B3E00);
  }
  form .button input:hover{
   /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(135deg,#7B3E00 ,#6F3203, #5B1F07,#4B0B0D,#3F0110);
   }
  @media(max-width: 584px){
  .container{
