@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -55,11 +57,13 @@ body {
     /* Fare üzerine gelince hafifçe opaklık ayarla */
 }
 
+
 .navbar {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: #ececec;
+    
     color: white;
     padding: 0.4rem 10rem;
     border-bottom: 1px solid grey;
@@ -67,12 +71,16 @@ body {
     top: 0;
     width: 100%;
     z-index: 999;
+    font-family: 'Comme', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
+
 }
 
 .brand-title {
     display: flex;
     width: 16rem;
-    color: rgb(110, 49, 18);
+    color: #161F47;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -87,9 +95,10 @@ body {
     font-weight: 800;
     font-size: 2rem;
     text-align: center;
+    
 }
 
-.brand-title img {
+.brand-title img { 
     width: 100%;
     border-radius: 50%;
 }
@@ -101,18 +110,26 @@ body {
 }
 
 .navbar-links li {
+    display: flex;
+    
     list-style: none;
     padding-top: 2rem;
-    font-size: 14px;
+
 }
+.navbar-links li img{
+    width: 40px;
+    height: 40px;
+
+}
+
 
 .navbar-links li a {
     text-decoration: none;
-    color: #333333;
+    color: #161F47;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 .navbar-links li:not(:last-child) a::after {
@@ -126,10 +143,7 @@ body {
 
 .navbar-links li:last-child a {
     color: #2bacf7;
-}
-
-.navbar-links li a:hover {
-    color: #5598;
+    width: 4rem;
 }
 
 .toggle-button {
@@ -150,6 +164,56 @@ body {
     border-radius: 10px;
 }
 
+@media(max-width:1100px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        overflow: hidden;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        text-align: center;
+        border-top: 1px solid grey;
+        padding: .5rem 0;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+        display: block;
+    }
+
+    .navbar-links li:not(:last-child) a::after {
+        display: none;
+    }
+
+    .brand-title {
+        padding: .5rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .upbot {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+}
 .basketFont {
     display: flex;
     align-items: center;
