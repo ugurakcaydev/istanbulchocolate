@@ -211,13 +211,13 @@ body {
 }
 
 .leftBasket {
+    width: 34%;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .productName {
-    width: 245px;
+    max-width: 100%;
     word-wrap: break-word;
 }
 

@@ -213,7 +213,7 @@ function addToastMessage() {
         text: "Ürün Sepete Eklendi",
         duration: 3000,
         destination: "../BasketPage/basket.html",
-        newWindow: true,
+        // newWindow: true,
         close: true,
         gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
