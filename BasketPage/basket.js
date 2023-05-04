@@ -1,15 +1,38 @@
-let leftDiv = document.querySelector(".leftDiv")
+let basketProducts = document.querySelector(".basketProducts")
 let storedProductId = localStorage.getItem("productId")
-
 let basketProductArray = storedProductId ? JSON.parse(storedProductId) : [];
+let basketDiv = document.createElement("div")
+basketDiv.classList.add("basketFont")
+let showCount = document.createElement("span")
+showCount.classList.add("showCount")
+showCount.innerHTML = `Sepetim (${basketProductArray.length} Ürün)`
+basketDiv.appendChild(showCount)
+basketProducts.appendChild(basketDiv)
+
+if (basketProductArray.length == 0) {
+    basketDiv.classList.add("emptyBasket")
+    let container = document.querySelector(".container")
+    let rightDiv = document.querySelector(".rightDiv")
+    let startShopping = document.createElement("button")
+    let basketIcon = document.createElement("img")
+    basketIcon.src = "../icons/basketicon.png"
+    startShopping.classList.add("startShoppingButton")
+    startShopping.innerHTML = "Alışverişe Başla"
+    container.style.justifyContent = "center"
+    rightDiv.style.display = "none"
+    basketDiv.insertBefore(basketIcon,showCount,startShopping)   
+    showCount.innerHTML = "Sepetinde ürün bulunmamaktadır."
+    basketDiv.appendChild(startShopping)
+}
+
 basketProductArray.forEach(product => {
     addBasket(product)
-    console.log(product);
 })
+
 function addBasket(product) {
     let basketProductDiv = document.createElement("div")
     basketProductDiv.classList.add("basketProduct")
-    leftDiv.appendChild(basketProductDiv)
+    basketProducts.appendChild(basketProductDiv)
 
     let leftBasket = document.createElement("div")
     leftBasket.classList.add("leftBasket")
