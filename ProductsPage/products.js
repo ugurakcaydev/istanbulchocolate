@@ -12,6 +12,9 @@ const getProduct = async () => {
         });
         const data = await response.json();
         data.forEach(item => {
+            productsObject.productId = item.productId
+            productsObject.productNames = item.productName
+            productsObject.productPrice = item.price
             addProduct(item);
         });
     } catch (error) {
@@ -27,6 +30,7 @@ function addProduct(item) {
 
     let fotoDİv = document.createElement("div")
     fotoDİv.classList.add("fotodiv")
+    fotoDİv.innerHTML = item.productId
     anadiv.appendChild(fotoDİv)
 
     let yaziDİv = document.createElement("div")
@@ -54,23 +58,12 @@ function addProduct(item) {
     addButton.addEventListener("click", () => {
         let productName = addButton.parentElement.parentElement.querySelector("#ürünname").textContent
         let productPrice = addButton.parentElement.parentElement.querySelector("#price").textContent
-        productsObject.push(productName)
-        localStorage.setItem("productNames", JSON.stringify(productsObject))
-        Toastify({
-            text: "Ürün Sepete Eklendi",
-            duration: 3000,
-            destination: "../BasketPage/basket.html",
-            newWindow: true,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-            onClick: function () {
-            } // Callback after click
-        }).showToast();
+        let productId = addButton.parentElement.parentElement.querySelector(".fotodiv").textContent
+        let floatPrice = parseFloat(productPrice)
+        let intId = parseInt(productId)
+        addProductToObject(intId, productName, floatPrice)
+
+        addToastMessage()
         //Sepete eklenecek  burada
         // let isThere = checkProductToAdd(productName, productPrice)
         // if (isThere) {
@@ -103,7 +96,6 @@ function addProduct(item) {
     subtractButton.addEventListener("click", () => {
         let productName = subtractButton.parentElement.parentElement.querySelector("#ürünname").textContent
         let productPrice = subtractButton.parentElement.parentElement.querySelector("#price").textContent
-        
         //ürün eksiltilecek sepetten
         // let isThere = checkProductToSubtract(productName, productPrice)
         // if (isThere) {
@@ -125,8 +117,27 @@ function addProduct(item) {
 
 
     })
-
 }
+
+function addProductToObject(productId, productName, productPrice) {
+    const existingProduct = productsObject.find(product => product.productId === productId);
+    if (existingProduct) {
+        let click = ++existingProduct.productClick
+        existingProduct.productPrice = Number(parseFloat(productPrice * click).toFixed(2))
+        console.log(existingProduct)
+    } else {
+        const newProduct = {
+            productId: productId,
+            productName: productName,
+            productPrice: productPrice,
+            productClick: 1
+        };
+        productsObject.push(newProduct);
+        localStorage.setItem("productId", JSON.stringify(productsObject))
+        console.log(newProduct);
+    }
+}
+
 // sepet kısmında yapılacak
 // function checkProductToSubtract(productName, productPrice) {
 //     const productIndex = productsObject.findIndex(item => item.name === productName);
@@ -196,8 +207,26 @@ function addProduct(item) {
 //     cartDiv.appendChild(productDiv);
 // }
 
-const backToTopButton = document.querySelector("#back-to-top-btn");
 
+function addToastMessage() {
+    Toastify({
+        text: "Ürün Sepete Eklendi",
+        duration: 3000,
+        destination: "../BasketPage/basket.html",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () {
+        } // Callback after click
+    }).showToast();
+}
+
+const backToTopButton = document.querySelector("#back-to-top-btn");
 window.addEventListener("scroll", () => {
     if (window.pageYOffset > 100) {
         backToTopButton.style.display = "block";
@@ -205,7 +234,6 @@ window.addEventListener("scroll", () => {
         backToTopButton.style.display = "none";
     }
 });
-
 backToTopButton.addEventListener("click", () => {
     window.scrollTo({
         top: 0,

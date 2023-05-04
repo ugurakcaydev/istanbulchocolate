@@ -153,7 +153,8 @@ body {
 .leftDiv>h1 {
     margin-bottom: .8rem;
 }
-.leftDiv{
+
+.leftDiv {
     width: 70%;
 }
 
@@ -179,7 +180,7 @@ body {
     justify-content: center;
 }
 
-.productName{
+.productName {
     width: 245px;
     word-wrap: break-word;
 }
@@ -228,7 +229,7 @@ body {
 
 .showPrice {
     color: #f27a1a;
-   
+
 }
 
 .trash {
