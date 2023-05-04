@@ -55,6 +55,14 @@ function addProduct(item) {
     addButton.classList.add("add")
     addButton.innerHTML = "+"
     yanDİv.appendChild(addButton)
+
+    addButton.style.transition = "transform 0.1s ease";
+    addButton.addEventListener( "mousedown" ,() => {
+    addButton.style.transform = 'scale(0.96)';})
+    addButton.addEventListener( "mouseup" ,() => {
+    addButton.style.transform = 'scale(1)';})
+    
+
     addButton.addEventListener("click", () => {
         let productName = addButton.parentElement.parentElement.querySelector("#ürünname").textContent
         let productPrice = addButton.parentElement.parentElement.querySelector("#price").textContent
@@ -93,9 +101,19 @@ function addProduct(item) {
     subtractButton.classList.add("subtract")
     subtractButton.innerHTML = "-"
     yanDİv.appendChild(subtractButton)
+
+    subtractButton.style.transition = "transform 0.1s ease";
+    subtractButton.addEventListener( "mousedown" ,() => {
+    subtractButton.style.transform = 'scale(0.96)';})
+    subtractButton.addEventListener( "mouseup" ,() => {
+    subtractButton.style.transform = 'scale(1)';})
+
     subtractButton.addEventListener("click", () => {
+
         let productName = subtractButton.parentElement.parentElement.querySelector("#ürünname").textContent
         let productPrice = subtractButton.parentElement.parentElement.querySelector("#price").textContent
+
+        
         //ürün eksiltilecek sepetten
         // let isThere = checkProductToSubtract(productName, productPrice)
         // if (isThere) {
@@ -240,3 +258,5 @@ backToTopButton.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+    
