@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@400;600;700&family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -65,6 +68,9 @@ body {
     top: 0;
     width: 100%;
     z-index: 999;
+    font-family: 'Comme', sans-serif;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .brand-title {
@@ -87,7 +93,7 @@ body {
     text-align: center;
 }
 
-.brand-title img {
+.brand-title img { 
     width: 100%;
     border-radius: 50%;
 }
@@ -101,7 +107,7 @@ body {
 .navbar-links li {
     list-style: none;
     padding-top: 2rem;
-    font-size: 14px;
+
 }
 
 .navbar-links li a {
@@ -110,7 +116,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .navbar-links li:not(:last-child) a::after {
@@ -242,15 +248,19 @@ body {
 }
 
 .yazılardiv>span:nth-child(1) {
-    font-size: 13px;
+    font-size: 1rem;
+    font-family: 'Comme', sans-serif;
+    
 }
 
 .yazılardiv>span:nth-child(2),
 .price {
     /* price */
     color: blueviolet;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: bold;
+    font-family: 'Lato', sans-serif;
+
 }
 
 .yandiv {
@@ -266,9 +276,11 @@ body {
 
 .add,
 .subtract {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    padding: 1.3rem ;
+
     cursor: pointer;
     border-style: none;
     display: flex;
