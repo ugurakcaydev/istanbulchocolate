@@ -8,7 +8,6 @@ basketProductArray.forEach(product => {
 
 })
 
-
 function Cart(product) {
 
     let cartProductDiv = document.createElement("div")
@@ -50,7 +49,6 @@ function Cart(product) {
         calculateTotalPrice(basketProductArray)
     })
 
-
     let counter = document.createElement("div")
     counter.classList.add("counter")
     counter.innerHTML = product.productClick
@@ -81,65 +79,6 @@ function Cart(product) {
     trashDiv.addEventListener("click", () => removeProduct(product.productId))
     cartProductDiv.appendChild(trashDiv)
 }
-
-// function Basket() {
-//     let result = calculateTotalPrice(basketProductArray)
-//     console.log(result);
-//     let cargoPrice = 19.99
-//     let basket = document.querySelector("#basket")
-//     //butonu oluşturuyoruz
-//     let confirmButton = document.createElement("button")
-//     confirmButton.classList.add("confirmBasket")
-//     confirmButton.innerHTML = "Sepeti Onayla"
-//     basket.appendChild(confirmButton)
-//     //orta kısmı oluşturuyoruz
-//     let orderDom = document.createElement("div")
-//     orderDom.classList.add("orderSummary")
-//     //orta kısmın içini yapıyoruz
-//     let h3Dom = document.createElement("h3")
-//     h3Dom.innerHTML = "Sipariş Özeti"
-//     orderDom.appendChild(h3Dom)
-//     let totalPriceDom = document.createElement("div")
-//     totalPriceDom.classList.add("totalProduct")
-//     let stringTotal = document.createElement("p")
-//     stringTotal.innerHTML = "Ürünün Toplamı"
-//     totalPriceDom.appendChild(stringTotal)
-//     let totalPricePrint = document.createElement("p")
-//     totalPricePrint.innerHTML = `${result} TL`
-//     totalPriceDom.appendChild(totalPricePrint)
-//     orderDom.appendChild(totalPriceDom)
-//     //kargo total'e geçiyoruz
-//     let totalCargoDom = document.createElement("div")
-//     totalCargoDom.classList.add("cargoTotal")
-//     let stringCargo = document.createElement("p")
-//     stringCargo.innerHTML = "Kargo Toplamı"
-//     totalCargoDom.appendChild(stringCargo)
-//     let totalCargoPrint = document.createElement("p")
-//     totalCargoPrint.innerHTML = `${cargoPrice} TL`
-//     totalCargoDom.appendChild(totalCargoPrint)
-//     orderDom.appendChild(totalCargoDom)
-//     //kargo + ürün
-//     let totalCargoProductPriceDom = document.createElement("div")
-//     totalCargoProductPriceDom.classList.add("totalPrice")
-//     totalCargoProductPriceDom.innerHTML
-
-//     // basket.appendChild(orderDom)
-//     //indirim kuponu kısmına geçiyoruz
-//     let discountCode = document.createElement("div")
-//     discountCode.classList.add("discountCode")
-//     let imgDom = document.createElement("img")
-//     imgDom.src = "../icons/plus.png"
-//     discountCode.textContent = "İndirim Kodu Gir"
-//     discountCode.appendChild(imgDom)
-//     basket.appendChild(discountCode)
-
-//     let confirmButton2 = document.createElement("button")
-//     confirmButton2.classList.add("confirmBasket")
-//     confirmButton2.innerHTML = "Sepeti Onayla"
-//     basket.appendChild(confirmButton2)
-
-// }
-
 
 function calculateTotalPrice(array) {
     let productTotalDom = document.querySelector("#productTotal")

@@ -53,7 +53,9 @@ function addProduct(item) {
 
     let addButton = document.createElement("button")
     addButton.classList.add("add")
-    addButton.innerHTML = "+"
+    let basketImg = document.createElement("img")
+    basketImg.src = "../icons/add-to-basket.png"
+    addButton.appendChild(basketImg)
     yanDİv.appendChild(addButton)
 
     addButton.style.transition = "transform 0.1s ease";
@@ -63,8 +65,6 @@ function addProduct(item) {
     addButton.addEventListener("mouseup", () => {
         addButton.style.transform = 'scale(1)';
     })
-
-
     addButton.addEventListener("click", () => {
         let productName = addButton.parentElement.parentElement.querySelector("#ürünname").textContent
         let productPrice = addButton.parentElement.parentElement.querySelector("#price").textContent
@@ -72,73 +72,8 @@ function addProduct(item) {
         let floatPrice = parseFloat(productPrice)
         let intId = parseInt(productId)
         addProductToObject(intId, productName, floatPrice)
-
         addToastMessage()
-        //Sepete eklenecek  burada
-        // let isThere = checkProductToAdd(productName, productPrice)
-        // if (isThere) {
-        //     productsObject.findIndex(item => {
-        //         const cartDiv = document.querySelector('#cart');
-        //         const productDiv = document.querySelector('.contents');
-        //         const priceSpan = document.querySelector('.priceSpan');
-        //         const countSpan = document.querySelector(".countSpan")
-        //         priceSpan.textContent = parseFloat(item.price).toFixed(2);
-        //         countSpan.textContent = item.count
-        //         productDiv.appendChild(countSpan)
-        //         productDiv.appendChild(priceSpan);
-        //         cartDiv.appendChild(productDiv);
-        //     });
-        // }
-        // else {
-        //     productsObject.push({
-        //         name: productName,
-        //         price: parseFloat(productPrice).toFixed(2),
-        //         count: 1
-        //     })
-        //     addProductToCart(productName, productPrice, 1)
-        // }
     })
-
-    // let subtractButton = document.createElement("button")
-    // subtractButton.classList.add("subtract")
-    // subtractButton.innerHTML = "-"
-    // yanDİv.appendChild(subtractButton)
-
-    // subtractButton.style.transition = "transform 0.1s ease";
-    // subtractButton.addEventListener("mousedown", () => {
-    //     subtractButton.style.transform = 'scale(0.96)';
-    // })
-    // subtractButton.addEventListener("mouseup", () => {
-    //     subtractButton.style.transform = 'scale(1)';
-    // })
-
-    // subtractButton.addEventListener("click", () => {
-
-    //     let productName = subtractButton.parentElement.parentElement.querySelector("#ürünname").textContent
-    //     let productPrice = subtractButton.parentElement.parentElement.querySelector("#price").textContent
-
-
-        //ürün eksiltilecek sepetten
-        // let isThere = checkProductToSubtract(productName, productPrice)
-        // if (isThere) {
-        //     productsObject.findIndex(item => {
-        //         const cartDiv = document.querySelector('#cart');
-        //         const productDiv = document.querySelector('.contents');
-        //         const priceSpan = document.querySelector('.priceSpan');
-        //         const countSpan = document.querySelector(".countSpan")
-        //         priceSpan.textContent = parseFloat(item.price);
-        //         countSpan.textContent = item.count
-
-        //         productDiv.appendChild(countSpan)
-        //         productDiv.appendChild(priceSpan);
-        //         cartDiv.appendChild(productDiv);
-        //     })
-        // } else {
-        //     console.log("Ürün sepetinizide yok kaldiramassin");
-        // }
-
-
-//     })
 }
 
 function addProductToObject(productId, productName, productPrice) {
@@ -158,76 +93,6 @@ function addProductToObject(productId, productName, productPrice) {
     }
     localStorage.setItem("productId", JSON.stringify(productsObject))
 }
-
-// sepet kısmında yapılacak
-// function checkProductToSubtract(productName, productPrice) {
-//     const productIndex = productsObject.findIndex(item => item.name === productName);
-//     if (productIndex === -1) {
-//         return false;
-//     } else {
-//         let item = productsObject[productIndex];
-//         if (item.count == 1) {
-//             // ürün sepetten silinmeli
-//             const cartDiv = document.querySelector('#cart');
-//             const productDiv = document.querySelector('.contents');
-//             const priceSpan = document.querySelector('.priceSpan');
-//             const countSpan = document.querySelector(".countSpan");
-//             productDiv.removeChild(priceSpan);
-//             productDiv.removeChild(countSpan);
-//             cartDiv.removeChild(productDiv);
-//             productsObject.splice(productIndex, 1);
-//             return false;
-//         } else {
-//             // ürün sayısı 1 veya daha fazla ise
-//             item.count--;
-//             item.price = (parseFloat(productPrice) * item.count).toFixed(2);
-//             return true;
-//         }
-//     }
-// }
-
-//sepet kısmında yapılacak
-// function checkProductToAdd(productName, productPrice) {
-//     const productIndex = productsObject.findIndex(item => item.name === productName);
-//     if (productIndex === -1) {
-//         return false
-//     } else {
-//         let item = productsObject[productIndex]
-//         item.count++
-//         const floatCount = item.count;
-//         productsObject[productIndex].price = (parseFloat(productPrice) * floatCount).toFixed(2);
-//         return true
-//     }
-// }
-
-//sepet kısmında yapılacak
-// function addProductToCart(productName, productPrice, productCount) {
-//     // Ürün div'ini oluşturun
-//     const productDiv = document.createElement('div');
-//     productDiv.classList.add('contents');
-
-//     // Ürün adını içeren bir span oluşturun
-//     const nameSpan = document.createElement('span');
-//     nameSpan.classList.add('nameSpan')
-//     nameSpan.textContent = productName;
-//     productDiv.appendChild(nameSpan);
-
-//     // Ürün adedini içeren bir span oluşturun ve 1 ile başlatın
-//     const countSpan = document.createElement('span');
-//     countSpan.classList.add('countSpan')
-//     countSpan.textContent = productCount;
-//     productDiv.appendChild(countSpan);
-
-//     // Ürün fiyatını içeren bir span oluşturun ve orijinal fiyatla başlatın
-//     const priceSpan = document.createElement('span');
-//     priceSpan.classList.add('priceSpan')
-//     priceSpan.textContent = parseFloat(productPrice).toFixed(2);
-//     productDiv.appendChild(priceSpan);
-
-//     const cartDiv = document.querySelector('#cart');
-//     cartDiv.appendChild(productDiv);
-// }
-
 
 function addToastMessage() {
     Toastify({

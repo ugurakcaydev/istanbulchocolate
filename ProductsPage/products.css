@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow: overlay;
+}
+
 body {
     margin: 0;
 }
@@ -21,22 +25,22 @@ body {
     /* Başlangıçta butonu gizle */
     position: fixed;
     /* Sayfada her zaman aynı konumda kalması için */
-    bottom: 30px;
+    bottom: 50px;
     /* Sayfanın altından 20 piksel yukarıda olacak şekilde konumlandır */
-    right: 20px;
+    right: 50px;
     /* Sayfanın sağ tarafında konumlandır */
     z-index: 99;
     /* Diğer öğelerin üzerinde görünmesini sağlar */
-    font-size: 20px;
+    font-size: 25px;
     /* Ok karakterinin boyutu */
     border: none;
     /* Kenarlık olmadan */
     outline: none;
     /* Odak noktası olmadan */
-    background-color: blueviolet;
+    background-color: #88B916;
     ;
     /* Arkaplan rengi */
-    color: yellow;
+    color: floralwhite;
     /* Yazı rengi */
     cursor: pointer;
     /* Fare imlecini el gösterisine dönüştürür */
@@ -46,8 +50,8 @@ body {
     /* Yuvarlak köşeler */
     transition: opacity 0.2s ease-in-out;
     /* Geçiş efekti */
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 
@@ -57,24 +61,22 @@ body {
 }
 
 .navbar {
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 100px;
     max-height: 100px;
-
     padding: 0.1rem;
     gap: 2rem;
-    background-color: #FEFEFE; /* aliceblue */
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
     font-weight: 500;
     top: 0;
     position: fixed;
-
+    background-color: floralwhite;
+    z-index: 3;
+    box-shadow: 0 0 20px 2px #88B916;
 
 }
 
@@ -85,9 +87,6 @@ body {
     justify-content: space-between;
     padding: 1rem;
     gap: 1rem;
-
-
-
 }
 
 .navbar .leftmenu div:first-child a {
@@ -172,7 +171,7 @@ body {
     width: 50%;
     gap: 3rem;
     justify-content: space-evenly;
-    margin: 8rem auto;
+    margin: 10rem auto;
 }
 
 .anadiv {
@@ -182,6 +181,7 @@ body {
     border-radius: 5px;
     border-style: outset;
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .fotodiv {
@@ -226,66 +226,34 @@ body {
 }
 
 .yandiv {
-    position: relative;
+    position: absolute;
     width: 40px;
-    height: 90px;
-    margin-left: 172px;
-    margin-top: -18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    right: -20px;
+    bottom: 35px;
+
 }
 
-.add,
-.subtract {
+.add {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     padding: 1.3rem;
-
     font-size: 1.2rem;
     cursor: pointer;
     border-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
 
 }
 
 .add {
-    background-color: #2ecc71;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.55);
+    position: relative;
 
 }
 
-.subtract {
-    background-color: #db0945;
-    color: white;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.55);
-}
-
-#cart {
-    width: 25%;
-    background-color: #2bacf7;
-}
-
-#cart h2 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.contents {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    padding: 2rem;
-    justify-content: space-around;
-}
-
-.contents img {
-    width: 120px;
-    height: 80px;
+.add img {
+    position: absolute;
+    width: 90%;
 }
