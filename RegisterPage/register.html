@@ -2,73 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="register.css">
-    <title>Kayıt Ol / İstanbul Çikolataları</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="register.css">
+  <title>Kayıt Ol / İstanbul Çikolataları</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="title">Registration</div>
-        <div class="content">
-          <form action="#">
-            <div class="user-details">
-              <div class="input-box">
-                <span class="details">Full Name</span>
-                <input type="text" placeholder="Enter your name" required>
-              </div>
-              <div class="input-box">
-                <span class="details">Username</span>
-                <input type="text" placeholder="Enter your username" required>
-              </div>
-              <div class="input-box">
-                <span class="details">Email</span>
-                <input type="text" placeholder="Enter your email" required>
-              </div>
-              <div class="input-box">
-                <span class="details">Phone Number</span>
-                <input type="text" placeholder="Enter your number" required>
-              </div>
-              <div class="input-box">
-                <span class="details">Password</span>
-                <input type="text" placeholder="Enter your password" required>
-              </div>
-              <div class="input-box">
-                <span class="details">Confirm Password</span>
-                <input type="text" placeholder="Confirm your password" required>
-              </div>
-            </div>
-            <div class="gender-details">
-              <input type="radio" name="gender" id="dot-1">
-              <input type="radio" name="gender" id="dot-2">
-              <input type="radio" name="gender" id="dot-3">
-              <span class="gender-title">Gender</span>
-              <div class="category">
-                <label for="dot-1">
-                <span class="dot one"></span>
-                <span class="gender">Male</span>
-              </label>
-              <label for="dot-2">
-                <span class="dot two"></span>
-                <span class="gender">Female</span>
-              </label>
-              <label for="dot-3">
-                <span class="dot three"></span>
-                <span class="gender">Prefer not to say</span>
-                </label>
-              </div>
-            </div>
-            <div class="button">
-              <input type="submit" value="Register">
-            </div>
-          </form>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" required>
+          </div>
         </div>
-      </div>
-    
-    
-    <!-- <div class="background"></div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="addressline">
+          <div class="address-title">Address Line 1</div>
+          <textarea name="" id="" required></textarea>
+
+        </div>
+        <div class="checkside">
+          <label class="checkbutton">
+            <input type="checkbox" name="" id="">
+          </label>
+
+          <span class="textA">Agreed to terms and conditions</span>
+          <div class="button">
+            <input onclick="clickbuton()" type="submit" value="Register">
+          </div>
+          <div class="reminder">
+            <span class="loginpage">Already have an account?
+              <a href="../LoginPage/login.html">Login here!</a> <!-- Link düzeltilecek-->
+            </span>
+          </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- <div class="background"></div>
     <div class="form_box">
         <div class="form_background"></div>
         <div class="header">Registration</div>
@@ -108,11 +124,11 @@
         </div>
         
     </div> -->
-    
-    
 
 
-    <!-- <div class="inputs">
+
+
+  <!-- <div class="inputs">
         <input type="text" name="text" id="name" placeholder="KullanıcıAdi" autocomplete="off">
         <input type="password" name="password" id="password" placeholder="password">
        <input type="password" name="passwordagain" id="passwordagain" placeholder="again password" autocomplete="off"> bu satır iptal!!!!!!!!!!!!!!!!
@@ -126,14 +142,14 @@
         </div>
     </div> -->
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/9a5063fd16.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="register.js"></script>
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/9a5063fd16.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="register.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
 </body>
 
 </html>
