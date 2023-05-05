@@ -63,7 +63,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background-color: #ececec;
-    
+
     color: white;
     padding: 0.4rem 10rem;
     border-bottom: 1px solid grey;
@@ -73,7 +73,7 @@ body {
     z-index: 999;
     font-family: 'Comme', sans-serif;
     font-family: 'Poppins', sans-serif;
-    
+
 
 }
 
@@ -95,10 +95,10 @@ body {
     font-weight: 800;
     font-size: 2rem;
     text-align: center;
-    
+
 }
 
-.brand-title img { 
+.brand-title img {
     width: 100%;
     border-radius: 50%;
 }
@@ -111,12 +111,13 @@ body {
 
 .navbar-links li {
     display: flex;
-    
+
     list-style: none;
     padding-top: 2rem;
 
 }
-.navbar-links li img{
+
+.navbar-links li img {
     width: 40px;
     height: 40px;
 
@@ -214,6 +215,7 @@ body {
         overflow: hidden;
     }
 }
+
 .basketFont {
     display: flex;
     align-items: center;
@@ -234,7 +236,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
 }
-.emptyBasket>img{
+
+.emptyBasket>img {
     width: 5%;
 }
 

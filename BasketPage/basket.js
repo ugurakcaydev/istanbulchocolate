@@ -14,13 +14,16 @@ if (basketProductArray.length == 0) {
     let container = document.querySelector(".container")
     let rightDiv = document.querySelector(".rightDiv")
     let startShopping = document.createElement("button")
+    startShopping.addEventListener("click", () => {
+        window.location.href = "../ProductsPage/products.html"
+    })
     let basketIcon = document.createElement("img")
     basketIcon.src = "../icons/basketicon.png"
     startShopping.classList.add("startShoppingButton")
     startShopping.innerHTML = "Alışverişe Başla"
     container.style.justifyContent = "center"
     rightDiv.style.display = "none"
-    basketDiv.insertBefore(basketIcon,showCount,startShopping)   
+    basketDiv.insertBefore(basketIcon, showCount, startShopping)
     showCount.innerHTML = "Sepetinde ürün bulunmamaktadır."
     basketDiv.appendChild(startShopping)
 }
