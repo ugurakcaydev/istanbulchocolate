@@ -34,3 +34,19 @@ async function gonder(name_id, password_id, email_id) {
     console.log(responseJson)
     console.log("name = ", JSON.stringify(body.username), "email = ", JSON.stringify(body.email), "password = ", JSON.stringify(body.password))
 }
+
+function clickbuton() {
+    var mybuton = document.querySelector('.button');
+    mybuton.style.transition = "transform 0.08s ease-in-out";
+
+    mybuton.addEventListener('mousedown', function () {
+        mybuton.style.transform = 'scale(0.86)';
+
+
+    });
+
+    mybuton.addEventListener('mouseup', function () {
+        mybuton.style.transform = 'scale(1)';
+
+    });
+}
