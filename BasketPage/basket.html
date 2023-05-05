@@ -23,11 +23,11 @@
         <div class="navbar-links">
             <ul>
                 <li><a href="../HomePage/home.html">ANASAYFA</a></li>
-                <li><a href="products.html">ÜRÜNLERİMİZ</a></li>
+                <li><a href="../ProductsPage/products.html">ÜRÜNLERİMİZ</a></li>
                 <li><a href="#">MADO TARİHİ</a></li>
                 <li><a href="#">FRANCHİSİNG</a></li>
                 <li><a href="#">KURUMSAL</a></li>
-                <li> <img src="../icons/iconbasket.png" alt=""><a href="../BasketPage/basket.html">SEPET</a></li>
+                <li><a href="../BasketPage/basket.html">SEPET</a> <img src="../icons/basketicon.png" alt=""></li>
 
             </ul>
         </div>
@@ -35,11 +35,11 @@
 
     <div class="container">
 
-        <div class="basketProducts">
+        <div id="cartProducts">
 
         </div>
 
-        <div class="rightDiv">
+        <div id="basket">
             <button class="confirmBasket">
                 Sepeti Onayla
             </button>
@@ -47,13 +47,13 @@
                 <h3>Sipariş Özeti</h3>
                 <div class="totalProduct">
                     <p>Ürünün toplamı</p>
-                    <p>913.90 TL</p>
+                    <p id="productTotal"></p>
                 </div>
                 <div class="cargoTotal">
                     <p>Kargo Toplam</p>
                     <p>19.99 TL</p>
                 </div>
-                <div class="totalPrice">933.99 TL</div>
+                <div class="totalPrice"></div>
             </div>
             <div class="discountCode">
                 <img src="../icons/plus.png" alt="" width="10%">

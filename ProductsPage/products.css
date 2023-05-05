@@ -61,7 +61,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background-color: #ececec;
-    
+
     color: white;
     padding: 0.4rem 10rem;
     border-bottom: 1px solid grey;
@@ -71,7 +71,7 @@ body {
     z-index: 999;
     font-family: 'Comme', sans-serif;
     font-family: 'Poppins', sans-serif;
-    
+
 
 }
 
@@ -93,10 +93,10 @@ body {
     font-weight: 800;
     font-size: 2rem;
     text-align: center;
-    
+
 }
 
-.brand-title img { 
+.brand-title img {
     width: 100%;
     border-radius: 50%;
 }
@@ -109,12 +109,13 @@ body {
 
 .navbar-links li {
     display: flex;
-    
+
     list-style: none;
     padding-top: 2rem;
 
 }
-.navbar-links li img{
+
+.navbar-links li img {
     width: 40px;
     height: 40px;
 
@@ -250,6 +251,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: nowrap;
     word-wrap: break-word;
     width: 175px;
@@ -258,7 +260,7 @@ body {
 .yazılardiv>span:nth-child(1) {
     font-size: 1rem;
     font-family: 'Comme', sans-serif;
-    
+
 }
 
 .yazılardiv>span:nth-child(2),
@@ -287,7 +289,7 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    padding: 1.3rem ;
+    padding: 1.3rem;
 
     font-size: 1.2rem;
     cursor: pointer;

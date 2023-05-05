@@ -6,14 +6,19 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     margin: 0;
 }
 
 .container {
-    width: 70%;
+    width: 60%;
     margin: 8rem auto;
     display: flex;
+    justify-content: space-evenly;
     gap: 5%;
 }
 
@@ -70,7 +75,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 3;
     font-family: 'Comme', sans-serif;
     font-family: 'Poppins', sans-serif;
 
@@ -118,8 +123,7 @@ body {
 }
 
 .navbar-links li img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
 
 }
 
@@ -150,7 +154,7 @@ body {
 .toggle-button {
     position: absolute;
     top: 2.5rem;
-    right: 1rem;
+    right: 6%;
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -166,6 +170,10 @@ body {
 }
 
 @media(max-width:1100px) {
+    body {
+        overflow: scroll;
+    }
+
     .toggle-button {
         display: flex;
     }
@@ -177,7 +185,7 @@ body {
 
     .navbar {
         overflow: hidden;
-        flex-direction: column;
+        display: inline;
         padding: 0;
     }
 
@@ -214,6 +222,10 @@ body {
         align-items: center;
         overflow: hidden;
     }
+
+    .container {
+        width: 90%;
+    }
 }
 
 .basketFont {
@@ -227,6 +239,10 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.emptyBasket>img {
+    width: 5%;
+}
+
 .emptyBasket {
     border: 1px solid gray;
     padding: 1.5rem;
@@ -237,13 +253,15 @@ body {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
-.emptyBasket>img {
-    width: 5%;
+.emptyBasket>span {
+    font-size: 18px;
+    font-family: sans-serif;
 }
 
+
 .startShoppingButton {
-    width: 250px;
-    padding: 12px 0;
+    width: 33%;
+    padding: 2% 0;
     display: flex;
     font-weight: 600;
     font-size: 18px;
@@ -257,16 +275,17 @@ body {
     cursor: pointer;
 }
 
-.basketProducts {
+#cartProducts {
     width: 70%;
+    height: max-content;
 }
 
-.rightDiv {
+#basket {
     width: 250px;
     display: block;
 }
 
-.basketProduct {
+.cartProduct {
     width: 100%;
     padding: 2rem;
     border: 1px solid gray;
@@ -277,7 +296,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.leftBasket {
+.leftCart {
     width: 34%;
     display: flex;
     align-items: center;
@@ -288,7 +307,7 @@ body {
     word-wrap: break-word;
 }
 
-.leftBasket>.image {
+.leftCart>.image {
     width: 40px;
     height: 40px;
     background-color: #2bacf7;
@@ -332,7 +351,8 @@ body {
 
 .showPrice {
     color: #f27a1a;
-
+    width: 60px;
+    text-align: center;
 }
 
 .trash {
@@ -404,4 +424,7 @@ body {
     font-size: 13px;
     font-weight: 600;
     color: #333333;
+}
+.discountCode > img{
+    width: 10%;
 }

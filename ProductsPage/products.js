@@ -57,11 +57,13 @@ function addProduct(item) {
     yanDİv.appendChild(addButton)
 
     addButton.style.transition = "transform 0.1s ease";
-    addButton.addEventListener( "mousedown" ,() => {
-    addButton.style.transform = 'scale(0.96)';})
-    addButton.addEventListener( "mouseup" ,() => {
-    addButton.style.transform = 'scale(1)';})
-    
+    addButton.addEventListener("mousedown", () => {
+        addButton.style.transform = 'scale(0.96)';
+    })
+    addButton.addEventListener("mouseup", () => {
+        addButton.style.transform = 'scale(1)';
+    })
+
 
     addButton.addEventListener("click", () => {
         let productName = addButton.parentElement.parentElement.querySelector("#ürünname").textContent
@@ -103,17 +105,19 @@ function addProduct(item) {
     yanDİv.appendChild(subtractButton)
 
     subtractButton.style.transition = "transform 0.1s ease";
-    subtractButton.addEventListener( "mousedown" ,() => {
-    subtractButton.style.transform = 'scale(0.96)';})
-    subtractButton.addEventListener( "mouseup" ,() => {
-    subtractButton.style.transform = 'scale(1)';})
+    subtractButton.addEventListener("mousedown", () => {
+        subtractButton.style.transform = 'scale(0.96)';
+    })
+    subtractButton.addEventListener("mouseup", () => {
+        subtractButton.style.transform = 'scale(1)';
+    })
 
     subtractButton.addEventListener("click", () => {
 
         let productName = subtractButton.parentElement.parentElement.querySelector("#ürünname").textContent
         let productPrice = subtractButton.parentElement.parentElement.querySelector("#price").textContent
 
-        
+
         //ürün eksiltilecek sepetten
         // let isThere = checkProductToSubtract(productName, productPrice)
         // if (isThere) {
@@ -140,8 +144,7 @@ function addProduct(item) {
 function addProductToObject(productId, productName, productPrice) {
     const existingProduct = productsObject.find(product => product.productId === productId);
     if (existingProduct) {
-        let click = ++existingProduct.productClick
-        existingProduct.productPrice = Number(parseFloat(productPrice * click).toFixed(2))
+        ++existingProduct.productClick
         console.log(existingProduct)
     } else {
         const newProduct = {
@@ -151,9 +154,9 @@ function addProductToObject(productId, productName, productPrice) {
             productClick: 1
         };
         productsObject.push(newProduct);
-        localStorage.setItem("productId", JSON.stringify(productsObject))
         console.log(newProduct);
     }
+    localStorage.setItem("productId", JSON.stringify(productsObject))
 }
 
 // sepet kısmında yapılacak
@@ -259,4 +262,3 @@ backToTopButton.addEventListener("click", () => {
     });
 });
 
-    
