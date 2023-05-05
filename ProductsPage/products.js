@@ -99,23 +99,23 @@ function addProduct(item) {
         // }
     })
 
-    let subtractButton = document.createElement("button")
-    subtractButton.classList.add("subtract")
-    subtractButton.innerHTML = "-"
-    yanDİv.appendChild(subtractButton)
+    // let subtractButton = document.createElement("button")
+    // subtractButton.classList.add("subtract")
+    // subtractButton.innerHTML = "-"
+    // yanDİv.appendChild(subtractButton)
 
-    subtractButton.style.transition = "transform 0.1s ease";
-    subtractButton.addEventListener("mousedown", () => {
-        subtractButton.style.transform = 'scale(0.96)';
-    })
-    subtractButton.addEventListener("mouseup", () => {
-        subtractButton.style.transform = 'scale(1)';
-    })
+    // subtractButton.style.transition = "transform 0.1s ease";
+    // subtractButton.addEventListener("mousedown", () => {
+    //     subtractButton.style.transform = 'scale(0.96)';
+    // })
+    // subtractButton.addEventListener("mouseup", () => {
+    //     subtractButton.style.transform = 'scale(1)';
+    // })
 
-    subtractButton.addEventListener("click", () => {
+    // subtractButton.addEventListener("click", () => {
 
-        let productName = subtractButton.parentElement.parentElement.querySelector("#ürünname").textContent
-        let productPrice = subtractButton.parentElement.parentElement.querySelector("#price").textContent
+    //     let productName = subtractButton.parentElement.parentElement.querySelector("#ürünname").textContent
+    //     let productPrice = subtractButton.parentElement.parentElement.querySelector("#price").textContent
 
 
         //ürün eksiltilecek sepetten
@@ -138,7 +138,7 @@ function addProduct(item) {
         // }
 
 
-    })
+//     })
 }
 
 function addProductToObject(productId, productName, productPrice) {
