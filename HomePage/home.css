@@ -23,7 +23,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -99;
-    background-image: url("../images/bg1.jpg");
+    background-image: url("../images/bg3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -129,7 +129,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #88b9167a;
+    background-color: #88b91654;
 }
 
 .tanitim2left {
