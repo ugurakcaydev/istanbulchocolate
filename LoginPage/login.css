@@ -267,6 +267,13 @@ input:valid+.labelline {
     text-decoration: underline;
 }
 
+.register {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .register span {
     font-size: larger;
     margin-right: 16px;
@@ -274,9 +281,9 @@ input:valid+.labelline {
     color: antiquewhite;
 }
 
-.register input {
-    width: 10rem;
-    height: 3rem;
+.register a {
+    padding: 1rem 1.5rem;
+    text-decoration: none;
     text-align: center;
     border: 1px solid black;
     border-radius: 4px;
@@ -284,7 +291,7 @@ input:valid+.labelline {
     background-color: antiquewhite;
 }
 
-.register input:hover {
+.register a:hover {
     background-color: wheat;
     color: #80471c;
     transition: 0.3s ease-in;
@@ -292,7 +299,7 @@ input:valid+.labelline {
 
 }
 
-.register input:not(:hover) {
+.register a:not(:hover) {
     transition: 0.3s ease-out;
 
 }

@@ -298,7 +298,7 @@ a {
 
 .showPrice {
     color: #88B916;
-    width: 60px;
+    width: 100px;
     text-align: center;
 }
 
@@ -401,7 +401,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 80%;
     color: #88B916;
     margin-top: 0.5rem;
     border-top: 1px solid #e6e6e6;
