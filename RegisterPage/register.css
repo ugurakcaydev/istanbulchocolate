@@ -145,8 +145,6 @@ form .addressline textarea {
 
 }
 
-form .checkside {}
-
 form .checkside .checkbutton input {
   width: 15px;
   height: 15px;
@@ -173,11 +171,6 @@ form .button input {
   background: linear-gradient(135deg, #bb571e, #fcdc8b, #723512, #bdb98d, #dfd3b6);
   box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.55);
 }
-
-/* form .button input:hover {
-  transform: scale(0.99); 
-  background: linear-gradient(135deg, #bb571e, #fcdc8b, #723512, #bdb98d, #dfd3b6);
-} */
 
 form .reminder {
   width: 100%;

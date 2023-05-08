@@ -90,7 +90,6 @@ function calculateTotalPrice(array) {
     let totalPrice = 0
     array.forEach(item => {
         totalPrice += (item.productPrice * item.productClick)
-
     })
     if (totalPrice >= 100) {
         cargo = 0
