@@ -31,7 +31,7 @@ body {
     /* Sayfanın sağ tarafında konumlandır */
     z-index: 99;
     /* Diğer öğelerin üzerinde görünmesini sağlar */
-    font-size: 25px;
+    font-size: 16px;
     /* Ok karakterinin boyutu */
     border: none;
     /* Kenarlık olmadan */
@@ -44,15 +44,12 @@ body {
     /* Yazı rengi */
     cursor: pointer;
     /* Fare imlecini el gösterisine dönüştürür */
-    padding: 10px;
-    /* Kenar boşluğu */
-    border-radius: 50%;
+    border-radius: 8%;
     /* Yuvarlak köşeler */
     transition: opacity 0.2s ease-in-out;
     /* Geçiş efekti */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 120px;
+    height: 40px;
 }
 
 #back-to-top-btn:hover {
@@ -68,7 +65,7 @@ body {
     height: 100px;
     max-height: 100px;
     padding: 0.1rem;
-    gap: 2rem;
+    gap: 5%;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
     font-weight: 500;
@@ -99,8 +96,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 28rem;
 }
 
 .navbar .mainheader .header {
@@ -109,8 +104,9 @@ body {
     color: #88B916;
 }
 
-.navbar a {
+a {
     text-decoration: none;
+    color: black;
 }
 
 
@@ -180,7 +176,6 @@ body {
     padding: 4px 4px 8px 4px;
     border-radius: 5px;
     border-style: outset;
-    margin-bottom: 1.5rem;
     position: relative;
 }
 
@@ -255,5 +250,10 @@ body {
 
 .add img {
     position: absolute;
-    width: 90%;
+    width: 100%;
+}
+
+.button {
+    cursor: pointer;
+    color: black;
 }

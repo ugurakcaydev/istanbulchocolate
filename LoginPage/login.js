@@ -3,8 +3,8 @@ async function checkusers(name_id, password_id) {
     var valuename = document.getElementById(name_id).value
     var valuepassword = document.getElementById(password_id).value
     const body = {
-        username: "taner",
-        password: "taner1@"
+        username: "kadir311",
+        password: "taner311A@"
     }
     const url = "http://localhost:5025/api/authenticate/login"
     const response = await fetch(url, {
@@ -16,12 +16,25 @@ async function checkusers(name_id, password_id) {
         body: JSON.stringify(body)
     })
     const responseJson = await response.json()
-    localStorage.setItem("responseJson", JSON.stringify(responseJson)) //localStorage adlı global bir araç heryerden erişilebilir gelendeğerleri localStorage.getItem("responseJson").isim şeklinde alabiliriz 
-    let token = JSON.parse(localStorage.getItem("responseJson")).token
+    localStorage.setItem("responseJson", JSON.stringify(responseJson))
+    let checkSuccess = responseJson.isSuccess
+    // let token = JSON.parse(localStorage.getItem("responseJson"))
     // let expiration = JSON.parse(localStorage.getItem("responseJson")).expiration
     // let isSuccess = JSON.parse(localStorage.getItem("responseJson")).isSuccess
-    if (token) {
-         window.location.href = "../HomePage/home.html";
+    if (checkSuccess) {
+        //kullanıcı varsa yapılıcak işlemler
+        getToastMessage(checkSuccess)
+        //  window.location.href = "../HomePage/home.html";
+
+    } else {
+        //kullanıcı yoksa yapılacak işlemler
+        getToastMessage(checkSuccess)
+
+    }
+}
+
+function getToastMessage(boolean) {
+    if (boolean) {
         Toastify({
             text: "Login successful",
             className: "info",

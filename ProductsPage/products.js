@@ -1,4 +1,14 @@
 
+let result = localStorage.getItem("responseJson")
+let responseJson = JSON.parse(result);
+let issuccess1Button = document.querySelector(".issuccess1")
+let issuccess2Button = document.querySelector(".issuccess2")
+if (responseJson.isSuccess) {
+    issuccess1Button.innerHTML = "Sepetim"
+    issuccess1Button.href = "../BasketPage/basket.html"
+    issuccess2Button.innerHTML = "Çıkış Yap"
+}
+
 let products = document.querySelector(".products")
 let productsObject = []
 const getProduct = async () => {
@@ -58,6 +68,20 @@ function addProduct(item) {
     addButton.appendChild(basketImg)
     yanDİv.appendChild(addButton)
 
+    addButton.addEventListener("click", () => {
+        let productName = addButton.parentElement.parentElement.querySelector("#ürünname").textContent
+        let productPrice = addButton.parentElement.parentElement.querySelector("#price").textContent
+        let productId = addButton.parentElement.parentElement.querySelector(".fotodiv").textContent
+        let floatPrice = parseFloat(productPrice)
+        let intId = parseInt(productId)
+
+        addProductToObject(intId, productName, floatPrice)
+        // if (issuccess1Button.innerHTML == "Sepetim") {
+        //     let uniqueArr = [...new Set(productsObject)];
+        //     addToastMessage(uniqueArr)
+        // }
+    })
+
     addButton.style.transition = "transform 0.1s ease";
     addButton.addEventListener("mousedown", () => {
         addButton.style.transform = 'scale(0.96)';
@@ -65,22 +89,14 @@ function addProduct(item) {
     addButton.addEventListener("mouseup", () => {
         addButton.style.transform = 'scale(1)';
     })
-    addButton.addEventListener("click", () => {
-        let productName = addButton.parentElement.parentElement.querySelector("#ürünname").textContent
-        let productPrice = addButton.parentElement.parentElement.querySelector("#price").textContent
-        let productId = addButton.parentElement.parentElement.querySelector(".fotodiv").textContent
-        let floatPrice = parseFloat(productPrice)
-        let intId = parseInt(productId)
-        addProductToObject(intId, productName, floatPrice)
-        addToastMessage()
-    })
+
 }
 
 function addProductToObject(productId, productName, productPrice) {
     const existingProduct = productsObject.find(product => product.productId === productId);
     if (existingProduct) {
         ++existingProduct.productClick
-        console.log(existingProduct)
+        addToastMessage(existingProduct)
     } else {
         const newProduct = {
             productId: productId,
@@ -89,14 +105,15 @@ function addProductToObject(productId, productName, productPrice) {
             productClick: 1
         };
         productsObject.push(newProduct);
-        console.log(newProduct);
+        addToastMessage(newProduct)
     }
     localStorage.setItem("productId", JSON.stringify(productsObject))
 }
 
-function addToastMessage() {
+function addToastMessage(array) {
+    console.log(array);
     Toastify({
-        text: "Ürün Sepete Eklendi",
+        text: ` (${array.productClick}) tane ${array.productName} sepete eklendi`,
         duration: 3000,
         destination: "../BasketPage/basket.html",
         // newWindow: true,

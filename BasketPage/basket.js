@@ -76,19 +76,44 @@ function Cart(product) {
     trashImg.classList.add("trash")
     trashImg.src = "../icons/trash.png"
     trashDiv.appendChild(trashImg)
-    trashDiv.addEventListener("click", () => removeProduct(product.productId))
+    trashDiv.addEventListener("click", () => removeProduct(product.productId, product.productName))
     cartProductDiv.appendChild(trashDiv)
 }
 
 function calculateTotalPrice(array) {
+    let freeCargoDom = document.querySelector(".freeCargoDom")
+    let cargoPrice = document.querySelector(".cargoPrice")
+    let cargo = 19.99
+    cargoPrice.innerHTML = `${cargo} TL`
     let productTotalDom = document.querySelector("#productTotal")
     let totalCargoAndProductPrice = document.querySelector(".totalPrice")
     let totalPrice = 0
     array.forEach(item => {
         totalPrice += (item.productPrice * item.productClick)
+
     })
+    if (totalPrice >= 100) {
+        cargo = 0
+        cargoPrice.style.textDecoration = "line-through";
+        freeCargoDom.style.display = "flex"
+        freeCargoDom.innerHTML = "100TL ve üzeri kargo bedava !"
+        freeCargoDom.style.color = "#88b916"
+    } else if ((totalPrice + cargo) < 50) {
+        document.querySelectorAll(".confirmBasket").forEach(item => {
+            item.classList.add("disabledButton")
+        })
+        freeCargoDom.style.display = "flex"
+        freeCargoDom.innerHTML = `Minimum sepet tutarı 50TL olmalıdır. <span> ${Number(parseFloat(50 - (totalPrice + cargo)).toFixed(2))} TL'lik ürün ekleyin ! </span>`
+        freeCargoDom.style.color = "red"
+    } else {
+        document.querySelectorAll(".confirmBasket").forEach(item => {
+            item.classList.remove("disabledButton")
+        })
+        document.querySelector(".freeCargoDom").style.display = "none"
+        cargoPrice.style.textDecoration = "none";
+    }
     productTotalDom.innerHTML = `${Number(parseFloat(totalPrice).toFixed(2))} TL`
-    totalCargoAndProductPrice.innerHTML = `${Number(parseFloat(totalPrice + 19.99).toFixed(2))} TL`
+    totalCargoAndProductPrice.innerHTML = `${Number(parseFloat(totalPrice + cargo).toFixed(2))} TL`
 }
 
 
@@ -96,15 +121,21 @@ function calculatePrice(productClick, productPrice) {
     return Number(parseFloat(productPrice * productClick).toFixed(2))
 }
 
-function removeProduct(productId) {
-    const productIndex = basketProductArray.findIndex(function (product) {
-        return product.productId === productId;
-    })
-    basketProductArray.splice(productIndex, 1);
+function removeProduct(productId, productName) {
+    if (confirm(`${productName} adlı ürün silinecek emin misiniz ?`)) {
+        const productIndex = basketProductArray.findIndex(function (product) {
+            return product.productId === productId;
+        })
+        basketProductArray.splice(productIndex, 1);
 
-    // Sepeti güncelle
-    localStorage.setItem('productId', JSON.stringify(basketProductArray));
-    window.location.href = "../BasketPage/basket.html"
+        // Sepeti güncelle
+        localStorage.setItem('productId', JSON.stringify(basketProductArray));
+
+        window.location.href = "../BasketPage/basket.html"
+    } else {
+        // Silme işlemi iptal edildi
+    }
+
 }
 
 function checkEmpty(array) {
@@ -144,6 +175,16 @@ function checkEmpty(array) {
         basketDiv.appendChild(showCount)
         cartProducts.appendChild(basketDiv)
     }
+}
+
+let result = localStorage.getItem("responseJson")
+let responseJson = JSON.parse(result);
+let issuccess1Button = document.querySelector(".issuccess1")
+let issuccess2Button = document.querySelector(".issuccess2")
+if (responseJson.isSuccess) {
+    issuccess1Button.innerHTML = "Sepetim"
+    issuccess1Button.href = "../BasketPage/basket.html"
+    issuccess2Button.innerHTML = "Çıkış Yap"
 }
 
 
