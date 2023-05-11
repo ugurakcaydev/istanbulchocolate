@@ -135,10 +135,246 @@ a {
     display: grid;
     position: absolute;
     z-index: 2;
-    top: 400%;
+    /* top: 400%; */
     left: 0;
+    top: 6.2rem;
 }
 
+.welcomeDiv {
+    width: 100%;
+    background-color: white;
+    padding: 2rem 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #161F47;
+}
+
+.welcomeDivLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    row-gap: 3rem;
+
+}
+
+.welcomeDivLeft span {
+    color: wheat;
+    font-size: 28px;
+}
+
+.welcomeDivLeft p {
+    width: 100%;
+    line-height: 1.8rem;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+
+}
+
+.welcomeDiv img {
+    width: 20%;
+}
+
+.franchising {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 2rem 16rem;
+    background-color: #161f4793;
+    color: white;
+    border-bottom: 1px solid #ccc;
+}
+
+.francLeft {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: .5rem;
+    row-gap: 1.5rem;
+}
+
+.francLeft h3 {
+    font-size: 2rem;
+}
+
+.francLeft span {
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+}
+
+.franchising button {
+    width: 250px;
+    padding: 1rem 1.5rem;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: white;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    transition: all .8s ease;
+    background-image: linear-gradient(to left, #161f4793 50%, #ffffff 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+.franchising button:hover {
+    cursor: pointer;
+    color: #161F47;
+    background-position: left bottom;
+}
+
+.containerAbout {
+    width: 100%;
+    background-color: #cecfcf;
+}
+
+.aboutUs {
+    display: flex;
+    margin: 2rem 16rem;
+    justify-content: space-between;
+
+}
+
+.aboutLeft,
+.aboutRight {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    row-gap: 1.2rem;
+}
+
+.aboutLeft img,
+.aboutRight img {
+    height: auto;
+    max-width: 100%;
+}
+
+.aboutLeft p,
+.aboutRight p {
+    line-height: 1.4rem;
+    font-size: 17px;
+    color: #7a7a7a;
+}
+
+.aboutRight h3 {
+    text-align: center;
+    font-size: 60px;
+    color: #202c60;
+}
+
+.openclosecontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background: white;
+    row-gap: 4rem;
+}
+
+.openclosecontainer div:first-child {
+    font-size: 36px;
+    line-height: 1.2em;
+    font-weight: 600;
+    color: #202c60;
+    text-align: center;
+}
+
+.blueDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: aqua;
+    transition: all 1s ease-in-out;
+}
+
+.blueDiv .imgDiv img {
+    max-width: 200px;
+    max-height: 350px;
+    border-radius: 8px;
+    transition: all 1s ease-in-out;
+}
+
+.blueDiv:hover {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.blueDiv:hover .imgDiv img {
+    max-width: 300px;
+    height: 355px;
+    right: 16rem;
+    background: #161F47;
+    transform: translateX(170%);
+    transition: transform 1s ease-in-out;
+}
+
+.blueDiv:hover .leftSide {
+    display: flex;
+    opacity: 1;
+    transition: opacity 5s ease-in;
+}
+
+/* .blueDiv {
+    position: relative;
+    width: 100%;
+    // width: 300px; 
+    height: 300px;
+    // border-radius: 50%; 
+    background-color: #41aaed;
+    padding: 2rem;
+} */
+
+.blueDiv .leftSide {
+    /* display: block; */
+    position: absolute;
+    left: 16rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    opacity: 0;
+    display: none;
+    transition: opacity 5s ease-in;
+}
+
+.leftSide p:first-child {
+    font-size: 20px;
+}
+
+.leftSide p:last-child {
+    font-size: 30px;
+}
+
+.leftSide div {
+    color: #000;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/*.blueDiv .imgDiv{
+    display: none;
+    max-width: 300px;
+    height: 355px;
+    position: absolute;
+    right: 16rem;
+    top: -10%;
+    background: #161F47;
+} */
+
+
+/* 
+//////////////////////////////////////////////////////////////////////////
 .tanıtım {
     width: 100%;
     background-color: white;
@@ -239,7 +475,9 @@ a {
     width: 60%;
     height: 70%;
     background-color: #88B916;
-}
+} 
+//////////////////////////////////////////////////////////////////////////
+*/
 
 /*
 @media(max-width:1100px) {

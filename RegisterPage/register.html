@@ -11,72 +11,75 @@
 
 <body>
   <div class="container">
-    <div class="title">Registration</div>
+    <div class="title">Kayıt Ol</div>
     <div class="content">
-      <form action="#">
+      <form id="form" action="#">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <label class="details">Kullanıcı Adı</label>
+            <input id="userName" type="text" placeholder="Kullanıcı adını giriniz" autocomplete="off" tabindex="1"
+              pattern="(?=.*[A-Z])[A-Za-z0-9]*[A-Za-z0-9]{3,}">
+            <span id="giveInfoUserName" class="giveInfo">" Kullanıcı adı en az 3 harf ve bir büyük harf içermelidir.
+              "</span>
           </div>
           <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
+            <label class="details">İsim</label>
+            <input id="name" type="text" placeholder="İsminizi giriniz" autocomplete="off" tabindex="4">
+            <span id="giveInfoName" class="giveInfo">"İsim en az 3 harf olmalıdır. "</span>
           </div>
           <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            <label class="details">Parola</label>
+            <input id="password" type="password" placeholder="Şifrenizi giriniz" autocomplete="off" tabindex="2">
+            <span id="giveInfoPassword" class="giveInfo">"Parola en az 5 harf,bir büyük harf ve bir sayı içermelidir
+              "</span>
           </div>
           <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            <label class="details">Telefon Numarası(+90)</label>
+            <input id="phoneNumber" type="text" placeholder="5** *** ** **" autocomplete="off" tabindex="5">
           </div>
           <div class="input-box">
-            <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <label class="details">Parola Tekrar</label>
+            <input id="againPassword" type="text" placeholder="Şifrenizi tekrar giriniz" autocomplete="off"
+              tabindex="3">
           </div>
           <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="password" placeholder="Confirm your password" required>
+            <label class="details">E-Mail</label>
+            <input id="email" type="email" placeholder="E-mail giriniz" autocomplete="off" tabindex="6">
           </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
+          <label class="gender-title">Cinsiyet</label>
           <div class="category">
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Male</span>
+            <label>
+              <input type="radio" id="male" name="gender" value="male" tabindex="7">
+              <label class="gender" for="male">Erkek</label>
             </label>
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">Female</span>
+            <label>
+              <input type="radio" id="female" name="gender" value="female" tabindex="8">
+              <label class="gender" for="female">Kadın</label>
             </label>
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Prefer not to say</span>
+            <label>
+              <input type="radio" id="other" name="gender" value="other" tabindex="9">
+              <label class="gender" for="other">Diğer</label>
             </label>
           </div>
+
         </div>
         <div class="addressline">
-          <div class="address-title">Address Line 1</div>
-          <textarea name="" id="" required></textarea>
-
+          <div class="address-title">Address</div>
+          <textarea name="address" id="address" tabindex="10"></textarea>
         </div>
         <div class="checkside">
           <label class="checkbutton">
-            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="conditions" tabindex="11">
           </label>
-
-          <span class="textA">Agreed to terms and conditions</span>
+          <label class="textA" for="conditions">Koşul ve şartları kabul ediyorum</label>
           <div class="button">
-            <input onclick="gonder()" type="submit" value="Register">
+            <input id="registerButton" type="submit" value="Kayıt Ol">
           </div>
           <div class="reminder">
-            <span class="loginpage">Already have an account?
-              <a href="../LoginPage/login.html">Login here!</a> <!-- Link düzeltilecek-->
+            <span class="loginpage">Zaten hesabın var mı ?
+              <a href="../LoginPage/login.html">Giriş Yap!</a>
             </span>
           </div>
       </form>
