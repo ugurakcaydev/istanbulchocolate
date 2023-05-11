@@ -5,26 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>İstanbul Çikolataları / Giriş Yap</title>
     <link rel="stylesheet" href="deneme.css">
 </head>
 
 <body>
-    <div class="background"></div>
-    <div class="content">
-        <div class="red"></div>
-        <div class="green"></div>
-        <div class="yellow"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
+    <div class="container">
+        <form class="left-Box">
+            <div class="logo-Box">
+                <div class="logo"></div>
+            </div>
+
+            <div class="header1">
+                <span>İstanbul Çikolataları</span>
+            </div>
+
+            <div class="small-Info">
+                <span>Lütfen hesabınıza giriş yapın</span>
+            </div>
+            <div class="entryarea">
+                <div class="username-Box">
+
+                    <input type="text" name="username" id="username" required autocomplete="off">
+                    <label for="username">Kullanıcı Adı</label>
+
+                    <div class="icon">
+
+                    </div>
+                </div>
+                <div class="password-Box">
+
+                    <input type="password" name="password" id="password" required>
+                    <label for="password">Şifre</label>
+                    <div class="icon">
+                    </div>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    Beni hatırla
+                </div>
+                <div class="button-Box">
+                    <button class="login-Button" onclick="clickbuton()">Giriş Yap</button>
+                </div>
+            </div>
+            <div class="forget-Text"> <a href="#">Şifreni mi unuttun ?</a> </div>
+            <div class="newacc-Box">
+                <span>Hesabın yok mu ?</span>
+                <div class="createNew"> <a href="#">Hesap Oluştur!</a> </div>
+            </div>
+
+        </form>
+
+        <div class="right-Box">
+            <div class="header2">TARİHİMİZ</div>
+            <span>
+                İstanbul Çikolataları, Türkiye'nin önde gelen çikolata üreticilerinden biridir. Şirketin kökeni, 1976
+                yılına dayanmaktadır. O dönemlerde İstanbul'un küçük bir çikolata üreticisi olan İstanbul Çikolataları,
+                kaliteli ürünleriyle kısa sürede müşterilerin gözdesi haline gelmiştir. Şirket, zamanla üretimini
+                genişletmiş, ürün yelpazesini zenginleştirmiş ve yenilikçi ürünler sunmaya başlamıştır. Günümüzde
+                İstanbul Çikolataları, ülke genelinde birçok şubesiyle hizmet vermektedir. Şirketin ürünleri arasında
+                farklı tatlar ve boyutlarda çikolatalar, trüf, bonbon, draje, kurabiye ve çikolatalı ürünler yer
+                almaktadır. İstanbul Çikolataları, geleneksel çikolata üretim tekniklerini modern üretim yöntemleriyle
+                birleştirerek, ürünlerinde kalite ve lezzeti bir arada sunmaktadır.
+            </span>
+
+
+        </div>
+
     </div>
-
-
+    <script src="deneme.js"></script>
 </body>
 
 </html>
