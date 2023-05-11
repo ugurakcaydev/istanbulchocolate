@@ -20,6 +20,8 @@ body {
     /* height: 100vh; */
 }
 
+
+
 #back-to-top-btn {
     display: none;
     /* Başlangıçta butonu gizle */
@@ -109,8 +111,7 @@ a {
     color: black;
 }
 
-
-@media(max-width:1100px) {
+ @media(max-width:1100px) {
     .toggle-button {
         display: flex;
     }
@@ -159,7 +160,7 @@ a {
         align-items: center;
         overflow: hidden;
     }
-}
+} 
 
 .products {
     display: flex;

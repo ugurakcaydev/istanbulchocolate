@@ -7,19 +7,20 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
-  height: 100vh;
+body,
+html {
+  /* background: linear-gradient(135deg, #3F0110, #4B0B0D, #5B1F07,#6F3203,#7B3E00); */
+  background-color: antiquewhite;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  /* background: linear-gradient(135deg, #3F0110, #4B0B0D, #5B1F07,#6F3203,#7B3E00); */
-  background-color: antiquewhite;
 }
 
 .container {
   max-width: 700px;
-  width: 100%;
+  width: 80%;
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
@@ -70,31 +71,34 @@ form .input-box span.details {
   padding-left: 15px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
 }
 
-.user-details .input-box input:focus,
-.user-details .input-box input:valid {
-  border-color: #3F0110;
+form .gender-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1.5rem;
+  margin: 1rem;
 }
 
 form .gender-details .gender-title {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 form .category {
   display: flex;
-  width: 80%;
-  margin: 14px 0;
-  justify-content: space-between;
+  width: 100%;
+
+  justify-content: space-evenly;
 }
 
 form .category label {
-  display: flex;
-  align-items: center;
   cursor: pointer;
 }
+
 
 form .category label .dot {
   height: 18px;
@@ -106,44 +110,40 @@ form .category label .dot {
   transition: all 0.3s ease;
 }
 
-#dot-1:checked~.category label .one,
+/* #dot-1:checked~.category label .one,
 #dot-2:checked~.category label .two,
 #dot-3:checked~.category label .three {
   background: #3F0110;
   border-color: #d9d9d9;
-}
+} */
 
-form input[type="radio"] {
+.gender-details #dot {
   display: none;
 }
 
 form .addressline {
-
   width: 100%;
-
 }
 
 form .addressline .address-title {
-  width: 100%;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 18px;
 }
 
 form .addressline textarea {
-  min-height: 2rem;
-
-  max-width: 100%;
-  min-width: 100%;
-
+  width: 100%;
+  min-height: 8rem;
+  padding: .8rem;
+  margin-bottom: .5rem;
+  font-size: 18px;
   outline: none;
-  font-size: 20px;
-  border-radius: 5px;
-  padding-left: 16px;
   border: 1px solid #ccc;
-
+  border-radius: 5px;
+  word-break: break-all;
   resize: none;
-
+  line-height: 28px;
+  transition: all 1s ease;
 }
+
 
 form .checkside .checkbutton input {
   width: 15px;
@@ -228,4 +228,21 @@ form .reminder .loginpage a:hover {
   .container .content .category {
     flex-direction: column;
   }
+}
+
+.activeInput {
+  border: 1px solid #88b916 !important;
+}
+
+.unActiveInput {
+  border: 1px solid red !important;
+}
+
+.giveInfo {
+  transition: color 1s ease;
+  font-size: 14px;
+}
+
+.textA {
+  cursor: pointer;
 }
