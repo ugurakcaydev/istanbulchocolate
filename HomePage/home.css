@@ -39,7 +39,7 @@ body {
     /* Yazı rengi */
     cursor: pointer;
     /* Fare imlecini el gösterisine dönüştürür */
-    border-radius: 8%;
+    border-radius: 20rem;
     /* Yuvarlak köşeler */
     transition: opacity 0.2s ease-in-out;
     /* Geçiş efekti */
@@ -143,7 +143,7 @@ a {
 .welcomeDiv {
     width: 100%;
     background-color: white;
-    padding: 2rem 16rem;
+    padding: 2rem 22rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,7 +155,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 40%;
     row-gap: 3rem;
 
 }
@@ -183,7 +183,7 @@ a {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 2rem 16rem;
+    padding: 2rem 22rem;
     background-color: #161f4793;
     color: white;
     border-bottom: 1px solid #ccc;
@@ -192,7 +192,7 @@ a {
 .francLeft {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     padding: .5rem;
     row-gap: 1.5rem;
 }
@@ -208,14 +208,14 @@ a {
 }
 
 .franchising button {
-    width: 250px;
-    padding: 1rem 1.5rem;
+    width: 186px;
+    padding: 15px 25px;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
     border-color: white;
     background-color: transparent;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     transition: all .8s ease;
     background-image: linear-gradient(to left, #161f4793 50%, #ffffff 50%);
     background-size: 200% 100%;
@@ -235,8 +235,9 @@ a {
 
 .aboutUs {
     display: flex;
-    margin: 2rem 16rem;
-    justify-content: space-between;
+    margin: 2rem 22rem;
+    justify-content: center;
+    gap: 2rem;
 
 }
 
@@ -245,6 +246,7 @@ a {
     width: 45%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: .5rem;
     row-gap: 1.2rem;
 }
@@ -252,13 +254,13 @@ a {
 .aboutLeft img,
 .aboutRight img {
     height: auto;
-    max-width: 100%;
+    max-width: 70%;
 }
 
 .aboutLeft p,
 .aboutRight p {
     line-height: 1.4rem;
-    font-size: 17px;
+    font-size: 22px;
     color: #7a7a7a;
 }
 
@@ -296,56 +298,32 @@ a {
     height: 300px;
     border-radius: 50%;
     background-color: aqua;
-    transition: all 1s ease-in-out;
-}
-
-.blueDiv .imgDiv img {
-    max-width: 200px;
-    max-height: 350px;
-    border-radius: 8px;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease;
 }
 
 .blueDiv:hover {
     width: 100%;
     border-radius: 16px;
-}
-
-.blueDiv:hover .imgDiv img {
-    max-width: 300px;
-    height: 355px;
-    right: 16rem;
-    background: #161F47;
-    transform: translateX(170%);
-    transition: transform 1s ease-in-out;
-}
-
-.blueDiv:hover .leftSide {
-    display: flex;
-    opacity: 1;
-    transition: opacity 5s ease-in;
-}
-
-/* .blueDiv {
     position: relative;
-    width: 100%;
-    // width: 300px; 
-    height: 300px;
-    // border-radius: 50%; 
-    background-color: #41aaed;
-    padding: 2rem;
-} */
+}
+
 
 .blueDiv .leftSide {
     /* display: block; */
     position: absolute;
-    left: 16rem;
+    left: -15rem;
     display: flex;
     flex-direction: column;
     max-width: 500px;
     opacity: 0;
-    display: none;
-    transition: opacity 5s ease-in;
+    transition: left 1s ease, opacity .5s ease;
+}
+
+.blueDiv:hover .leftSide {
+    display: block;
+    opacity: 1;
+    left: 16rem;
+    transition: left 1s ease, opacity 2s ease-in-out;
 }
 
 .leftSide p:first-child {
@@ -362,6 +340,37 @@ a {
     line-height: 1.6;
 }
 
+.blueDiv .imgDiv {
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    max-width: 200px;
+    max-height: 300px;
+    border-radius: 8px;
+    transition: right 1s ease, width 1s ease, top 1s ease;
+    ;
+}
+
+.blueDiv .imgDiv img {
+    width: 100%;
+    border-radius: 8px;
+    transition: right 1s ease, width 1s ease;
+}
+
+
+.blueDiv:hover .imgDiv {
+    top: -2rem;
+    position: absolute;
+    display: block;
+    right: 16rem;
+    transition: right 1s ease, top 1s ease;
+}
+
+.blueDiv:hover .imgDiv img {
+    width: 120%;
+    transition: width 1s ease, top 1s ease;
+}
+
 /*.blueDiv .imgDiv{
     display: none;
     max-width: 300px;
@@ -370,11 +379,105 @@ a {
     right: 16rem;
     top: -10%;
     background: #161F47;
-} */
+} //////////////////////////////////////////////////////////////////////////*/
 
 
-/* 
-//////////////////////////////////////////////////////////////////////////
+.footer {
+    width: 100%;
+    background-color: #161F47;
+    opacity: 0.9;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    padding: 4rem 0;
+}
+
+.footer .box {
+
+    width: 800px;
+    height: 100%;
+    margin: auto;
+    background-color: #161F47;
+}
+
+.footer .top-box {
+    display: flex;
+    width: 100%;
+    height: 20%;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.48);
+    padding: 10px;
+    margin-bottom: 3rem;
+}
+
+.footer .top-box .left-header {
+
+    width: 50%;
+    font-size: 24px;
+    font-weight: 700;
+
+}
+
+.footer .top-box .right-icons {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 50%;
+    text-align: end;
+
+}
+
+.footer .top-box .right-icons .icon img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.footer .box .others-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.footer .box .others-box ul {
+    max-width: 10rem;
+    list-style: none;
+    font-size: larger;
+    font-weight: 800;
+
+
+}
+
+.footer .box .others-box ul li:first-child {
+
+    font-size: larger;
+    font-weight: 800;
+    margin-bottom: 10px;
+
+
+}
+
+
+.footer .box .others-box ul li:not(:first-child) {
+    font-size: medium;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.38);
+    cursor: pointer;
+
+}
+
+.footer .box .others-box ul li:hover {
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+/*///////////////////////////////////////////////////////////////////////////
 .tanıtım {
     width: 100%;
     background-color: white;
