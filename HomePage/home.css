@@ -155,7 +155,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 40%;
     row-gap: 3rem;
 
 }
@@ -192,7 +192,7 @@ a {
 .francLeft {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     padding: .5rem;
     row-gap: 1.5rem;
 }
@@ -245,6 +245,7 @@ a {
     width: 45%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: .5rem;
     row-gap: 1.2rem;
 }
@@ -252,13 +253,13 @@ a {
 .aboutLeft img,
 .aboutRight img {
     height: auto;
-    max-width: 100%;
+    max-width: 70%;
 }
 
 .aboutLeft p,
 .aboutRight p {
     line-height: 1.4rem;
-    font-size: 17px;
+    font-size: 22px;
     color: #7a7a7a;
 }
 
@@ -296,56 +297,31 @@ a {
     height: 300px;
     border-radius: 50%;
     background-color: aqua;
-    transition: all 1s ease-in-out;
-}
-
-.blueDiv .imgDiv img {
-    max-width: 200px;
-    max-height: 350px;
-    border-radius: 8px;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease;
 }
 
 .blueDiv:hover {
     width: 100%;
     border-radius: 16px;
-}
-
-.blueDiv:hover .imgDiv img {
-    max-width: 300px;
-    height: 355px;
-    right: 16rem;
-    background: #161F47;
-    transform: translateX(170%);
-    transition: transform 1s ease-in-out;
+    position: relative;
 }
 
 .blueDiv:hover .leftSide {
-    display: flex;
+    display: block;
     opacity: 1;
-    transition: opacity 5s ease-in;
+    left: 16rem;
+    transition: left 1s ease, opacity 2s ease-in-out;
 }
-
-/* .blueDiv {
-    position: relative;
-    width: 100%;
-    // width: 300px; 
-    height: 300px;
-    // border-radius: 50%; 
-    background-color: #41aaed;
-    padding: 2rem;
-} */
 
 .blueDiv .leftSide {
     /* display: block; */
     position: absolute;
-    left: 16rem;
+    left: -15rem;
     display: flex;
     flex-direction: column;
     max-width: 500px;
     opacity: 0;
-    display: none;
-    transition: opacity 5s ease-in;
+    transition: left 1s ease, opacity 1s ease;
 }
 
 .leftSide p:first-child {
@@ -360,6 +336,24 @@ a {
     color: #000;
     font-size: 15px;
     line-height: 1.6;
+}
+
+.blueDiv .imgDiv img {
+    max-width: 200px;
+    max-height: 350px;
+    border-radius: 8px;
+    transition: all 1s ease;
+}
+
+
+
+.blueDiv:hover .imgDiv img {
+    max-width: 300px;
+    height: 355px;
+    right: 16rem;
+    background: #161F47;
+    transform: translateX(170%);
+    transition: transform 1s ease;
 }
 
 /*.blueDiv .imgDiv{
