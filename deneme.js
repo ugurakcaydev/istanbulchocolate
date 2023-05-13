@@ -1,5 +1,5 @@
 function clickbuton() {
-    var mybuton = document.querySelector('.login-Button');
+    var mybuton = document.querySelectorAll('.login-Button', 'register-Button');
     mybuton.style.transition = "transform 0.08s ease-in-out";
 
     mybuton.addEventListener('mousedown', function () {
@@ -10,3 +10,10 @@ function clickbuton() {
         mybuton.style.transform = 'scale(1)';
     });
 }
+
+hamburger = document.querySelector(".hamburger");
+hamburger.onclick = function () {
+    navBar = document.querySelector(".nav-Bar");
+    navBar.classList.toggle("active");
+}
+

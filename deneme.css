@@ -1,283 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-
-    color: antiquewhite;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-    height: 100vh;
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-image: url(/8.jpg);
-    background-size: cover;
+    height: 100vh;
 }
 
-.container {
-    display: flex;
-    overflow: overlay;
-
-    max-width: 900px;
-    max-height: 850px;
+header {
     width: 100%;
-
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 1% .5%;
-    border-radius: 5px;
-    box-shadow: 1px 2px 10px rgba(255, 255, 255, 0.45);
-
-}
-
-.container .left-Box {
+    height: 80px;
+    background-color: #292b2c;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-right: 2px solid antiquewhite;
-    position: relative;
-    width: 100%;
-    padding: 3rem;
-
+    justify-content: space-between;
+    padding: 0 150px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    opacity: 1;
 
 }
 
-.container .left-Box .logo-Box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 2rem;
-}
-
-.container .left-Box .logo {
-    width: 12rem;
-    height: 12rem;
-
-    background-image: url(/logo.JPG);
-    background-size: cover;
-    border-radius: 50%;
-
-
-}
-
-.container .left-Box .header1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.container .left-Box .header1 span {
-    color: antiquewhite;
-    font-size: x-large;
+.logo {
     text-align: center;
-    font-weight: 650;
-
-
-}
-
-.container .left-Box .small-Info {
-    position: relative;
-    width: 100%;
-    margin-bottom: 2rem;
-
-}
-
-.container .left-Box .small-Info span {
-    font-size: medium;
-    color: antiquewhite;
-    padding-left: 10px;
-}
-
-.container .left-Box .entryarea {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 15rem;
-
-
-
-}
-
-.container .left-Box .entryarea .username-Box {
-    display: flex;
-
-}
-
-.container .left-Box .entryarea .password-Box {
-    display: flex;
-
-}
-
-.entryarea input {
-    width: 100%;
-    height: 45px;
-    border: 2px solid antiquewhite;
-    background-color: transparent;
-    border-radius: 8px;
-    padding-left: 10px;
-    outline: none;
-    color: antiquewhite;
-    font-size: large;
-    margin-bottom: 2rem;
-
-}
-
-.container .left-Box .entryarea label {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    position: absolute;
-
-
-    height: 2.5rem;
-    padding-left: 10px;
-    color: antiquewhite;
-    font-size: large;
-    transition: 0.2s ease;
-
-
-
-}
-
-.entryarea input:focus~label,
-.entryarea input:valid~label {
-    color: antiquewhite;
-    transform: translate(-10px, -33px) scale(0.80);
-
-}
-
-.container .entryarea .remember {
-    display: flex;
-    align-items: center;
-    color: antiquewhite;
-    gap: 10px;
-    padding: 0.1rem;
-    margin-bottom: 1rem;
-
-}
-
-.container .entryarea .remember input {
-    margin: 0;
-    width: 15px;
-    height: 15px;
-}
-
-.container .entryarea .button-Box {
-
-    width: 100%;
-
-}
-
-.container .entryarea .button-Box .login-Button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.6rem;
-    background-color: antiquewhite;
-    color: #000;
-    width: 100%;
-    border: 1px solid #000;
     font-size: larger;
-    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.4);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
-.container .forget-Text {
+.buttons {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-Bar ul {
+    width: 600px;
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    padding: 1rem;
-
-}
-
-.container .forget-Text a {
-    color: antiquewhite;
-    text-decoration: none;
-}
-
-.container .forget-Text:hover {
-    text-decoration: underline;
-    cursor: pointer;
+    justify-content: space-evenly;
+    padding: 0.5rem;
 
 }
 
-.container .newacc-Box {
+.nav-Bar ul li {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    font-size: larger;
-    margin-top: 2rem;
+    font-size: 17px;
+    padding: 0.5rem;
+
 
 }
 
-.container .newacc-Box .createNew {
-    padding: 0.6rem;
-    font-size: large;
-    background-color: antiquewhite;
+.nav-Bar ul li a {
+    display: block;
+    color: whitesmoke;
+    border-radius: 20rem;
+    transition: 0.4s;
+    padding: 6px 7px;
+    text-shadow: 3px 2px 10px rgba(0, 0, 0, 0.55);
 
-    border: none;
-    border-radius: 16px 0px;
 
 }
 
-.container .newacc-Box .createNew a {
+.nav-Bar ul li a:hover {
+
     color: black;
-    text-decoration: none;
-}
-
-.container .newacc-Box .createNew a:hover {
-    text-decoration: underline;
+    background-color: whitesmoke;
 
 }
 
-.container .right-Box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    position: relative;
-
-    border-left: 2px solid antiquewhite;
-    width: 100%;
-    padding: 3rem;
-
+.nav-Bar ul li a.activee {
+    color: black;
+    background-color: whitesmoke;
 
 }
 
-.container .right-Box .header2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    width: 100%;
-    color: white;
-    position: absolute;
-    top: 10%;
-    font-size: x-large;
-    font-weight: 800;
-    font-family: 'Times New Roman', Times, serif;
-
-}
-
-.container .right-Box span {
-    width: 100%;
-    max-height: 600px;
-
-    color: white;
-    font-size: large;
-    margin-top: 4rem;
+button {
+    font-size: 16px;
     font-weight: 500;
-    font-family: 'Times New Roman', Times, serif;
+    padding: .5rem;
+    border: none;
+    background-color: rgb(25, 135, 84);
+    text-shadow: 3px 2px 10px rgba(0, 0, 0, 0.55);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+
+
+}
+
+button:hover {
+    box-shadow: inset 1px 1px 7px rgba(0, 0, 0, 0.8);
+}
+
+button a {
+    color: whitesmoke;
+}
+
+.nav-Bar ul button:last-child {
+    background-color: #e59019;
+}
+
+@media only screen and (max-width:1320px) {
+    header {
+        padding: 0 100px;
+    }
+
+}
+
+@media only screen and (max-width:1100px) {
+    header {
+        padding: 1rem;
+    }
+
+}
+
+@media only screen and (max-width:740px) {
+    header {
+        padding: 1rem;
+
+    }
+
+    .buttons {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 1rem;
+
+        padding: 1rem;
+    }
+
+    .register-Button {
+        background-color: #e59019;
+    }
+
+    .login-Button2,
+    .register-Button2 {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+
+    }
+
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background-color: whitesmoke;
+        margin: 6px 0;
+    }
+
+    .nav-Bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 0px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: #292b2c;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .nav-Bar.active {
+        /* Açılır kapanır menü*/
+        height: 200px;
+        opacity: 0.95;
+    }
+
+    .nav-Bar ul {
+        flex-direction: column;
+
+    }
+
+    .nav-Bar ul li {
+        font-size: larger;
+    }
+
+
 
 }
