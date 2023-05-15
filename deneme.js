@@ -17,3 +17,8 @@ hamburger.onclick = function () {
     navBar.classList.toggle("active");
 }
 
+let buttons = document.querySelectorAll("button")
+buttons.forEach(button => {
+    button.addEventListener("click", clickbuton)
+    console.log("aaa");
+})

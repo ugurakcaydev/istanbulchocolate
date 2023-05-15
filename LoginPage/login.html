@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İstanbul Çikolataları / Giriş Yap</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -26,18 +27,19 @@
             <div class="entryarea">
                 <div class="username-Box">
 
-                    <input type="text" name="username" id="username" required autocomplete="off">
+                    <input type="text" name="username" id="username" autocomplete="off">
                     <label for="username">Kullanıcı Adı</label>
 
                     <div class="icon">
-
+                        <img src="../icons/3.png" alt="">
                     </div>
                 </div>
                 <div class="password-Box">
 
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password">
                     <label for="password">Şifre</label>
                     <div class="icon">
+                        <img src="../icons/2.png" alt="" onclick="showPassword('password',this)">
                     </div>
                 </div>
                 <div class="remember">
@@ -45,7 +47,7 @@
                     Beni hatırla
                 </div>
                 <div class="button-Box">
-                    <button class="login-Button" onclick="clickbuton()">Giriş Yap</button>
+                    <button class="loginButton" id="loginButton" href="#">Giriş Yap</button>
                 </div>
             </div>
             <div class="forget-Text"> <a href="#">Şifreni mi unuttun ?</a> </div>
@@ -58,21 +60,15 @@
 
         <div class="right-Box">
             <div class="header2">TARİHİMİZ</div>
-            <span>
-                İstanbul Çikolataları, Türkiye'nin önde gelen çikolata üreticilerinden biridir. Şirketin kökeni, 1976
-                yılına dayanmaktadır. O dönemlerde İstanbul'un küçük bir çikolata üreticisi olan İstanbul Çikolataları,
-                kaliteli ürünleriyle kısa sürede müşterilerin gözdesi haline gelmiştir. Şirket, zamanla üretimini
-                genişletmiş, ürün yelpazesini zenginleştirmiş ve yenilikçi ürünler sunmaya başlamıştır. Günümüzde
-                İstanbul Çikolataları, ülke genelinde birçok şubesiyle hizmet vermektedir. Şirketin ürünleri arasında
-                farklı tatlar ve boyutlarda çikolatalar, trüf, bonbon, draje, kurabiye ve çikolatalı ürünler yer
-                almaktadır. İstanbul Çikolataları, geleneksel çikolata üretim tekniklerini modern üretim yöntemleriyle
-                birleştirerek, ürünlerinde kalite ve lezzeti bir arada sunmaktadır.
-            </span>
-
-
+            <div class="multidiv">
+                <span class="multiText"></span>
+            </div>
         </div>
-
     </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js "> </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/9a5063fd16.js" crossorigin="anonymous"></script>
     <script src="login.js"></script>
 </body>
 

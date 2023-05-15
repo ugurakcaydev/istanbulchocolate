@@ -7,31 +7,25 @@ if (responseJson.isSuccess) {
     issuccess1Button.href = "../BasketPage/basket.html"
     issuccess2Button.innerHTML = "Çıkış Yap"
 }
+issuccess2Button.addEventListener("click", async () => {
+    try {
+        const url = "http://localhost:5025/api/authenticate/LogOut"
+        localStorage.setItem("responseJson", "")
+        localStorage.setItem("productId", "[]")
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json;charset=UTF-8"'
+            },
+            body: responseJson.token
+        })
+        console.log(response);
+    } catch {
+        console.error("ERROR")
+    }
+})
 
-
-// const swiper = new Swiper('.swiper', {
-//     autoplay: {
-//         delay: 10000,
-//         disableOnInteraction: false,
-//     },
-//     loop: false,
-
-//     pagination: {
-//         el: '.swiper-pagination',
-//     },
-
-//     navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//     },
-// });
-
-// const toggleButton = document.getElementsByClassName('toggle-button')[0]
-// const navbarLinks = document.getElementsByClassName('navbar-links')[0]
-// toggleButton.addEventListener('click', () => {
-//     navbarLinks.classList.toggle('active')
-
-// })
 const backToTopButton = document.querySelector("#back-to-top-btn");
 window.addEventListener("scroll", () => {
     if (window.pageYOffset > 100) {

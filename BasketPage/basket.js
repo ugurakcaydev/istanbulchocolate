@@ -134,7 +134,6 @@ function removeProduct(productId, productName) {
     } else {
         // Silme işlemi iptal edildi
     }
-
 }
 
 function checkEmpty(array) {
@@ -185,7 +184,24 @@ if (responseJson.isSuccess) {
     issuccess1Button.href = "../BasketPage/basket.html"
     issuccess2Button.innerHTML = "Çıkış Yap"
 }
-
+issuccess2Button.addEventListener("click", async () => {
+    try {
+        const url = "http://localhost:5025/api/authenticate/LogOut"
+        localStorage.setItem("responseJson", "")
+        localStorage.setItem("productId", "[]")
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json;charset=UTF-8"'
+            },
+            body: responseJson.token
+        })
+        console.log(response);
+    } catch {
+        console.error("ERROR")
+    }
+})
 
 const backToTopButton = document.querySelector("#back-to-top-btn");
 window.addEventListener("scroll", () => {

@@ -45,6 +45,14 @@ header {
 .hamburger {
     display: none;
 }
+.nav-Bar{
+    display: flex;
+    align-items: center;
+}
+.buttonss{
+    display: flex;
+    gap: 1rem;
+}
 
 .nav-Bar ul {
     width: 600px;
@@ -131,7 +139,7 @@ button a {
 
     }
 
-    .buttons {
+    .buttonss {
         width: 50%;
         display: flex;
         align-items: center;
@@ -145,10 +153,6 @@ button a {
         background-color: #e59019;
     }
 
-    .login-Button2,
-    .register-Button2 {
-        display: none;
-    }
 
     .hamburger {
         display: block;

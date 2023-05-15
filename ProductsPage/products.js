@@ -3,28 +3,49 @@ let result = localStorage.getItem("responseJson")
 let responseJson = JSON.parse(result);
 let issuccess1Button = document.querySelector(".issuccess1")
 let issuccess2Button = document.querySelector(".issuccess2")
-if (responseJson.isSuccess) {
+if (responseJson.token) {
     issuccess1Button.innerHTML = "Sepetim"
     issuccess1Button.href = "../BasketPage/basket.html"
     issuccess2Button.innerHTML = "Çıkış Yap"
 }
 
-let products = document.querySelector(".products")
-let productsObject = []
-const getProduct = async () => {
+issuccess2Button.addEventListener("click", async () => {
     try {
-        const response = await fetch("http://localhost:5025/api/Product/GetProduct", {
-            method: 'GET',
+        const url = "http://localhost:5025/api/authenticate/LogOut"
+        localStorage.setItem("responseJson", "")
+        localStorage.setItem("productId", "[]")
+        const response = await fetch(url, {
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json;charset=UTF-8"'
             },
+            body: responseJson.token
+        })
+        console.log(response);
+    } catch {
+        console.error("ERROR")
+    }
+})
+let products = document.querySelector(".products")
+let productsObject = []
+const getProduct = async () => {
+    try {
+        const response = await fetch("http://localhost:5025/api/Product/GetAllProduct", {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + responseJson.token,
+                'Content-Type': 'application/json;charset=UTF-8"'
+            },
         });
         const data = await response.json();
+
         data.forEach(item => {
-            productsObject.productId = item.productId
-            productsObject.productNames = item.productName
-            productsObject.productPrice = item.price
+            // productsObject.productImage = `../images/${item.productName}.jpg`
+            productsObject.productId = item.ProductId
+            productsObject.productNames = item.ProductName
+            productsObject.productPrice = item.Price
             addProduct(item);
         });
     } catch (error) {
@@ -40,7 +61,11 @@ function addProduct(item) {
 
     let fotoDİv = document.createElement("div")
     fotoDİv.classList.add("fotodiv")
-    fotoDİv.innerHTML = item.productId
+    // let productImg = document.createElement("img")
+    // productImg.classList.add("productImg")
+    // productImg.src = productsObject.productImage
+    fotoDİv.innerHTML = item.ProductId
+    // fotoDİv.appendChild(productImg)
     anadiv.appendChild(fotoDİv)
 
     let yaziDİv = document.createElement("div")
@@ -49,12 +74,12 @@ function addProduct(item) {
 
     let productName = document.createElement("span")
     productName.id = "ürünname"
-    productName.innerHTML = item.productName
+    productName.innerHTML = item.ProductName
     yaziDİv.appendChild(productName)
 
     let productPrice = document.createElement("span")
     productPrice.id = "price"
-    productPrice.innerHTML = item.price + " TL"
+    productPrice.innerHTML = item.Price + " TL"
     yaziDİv.appendChild(productPrice)
 
     let yanDİv = document.createElement("div")
@@ -93,7 +118,8 @@ function addProduct(item) {
 }
 
 function addProductToObject(productId, productName, productPrice) {
-    const existingProduct = productsObject.find(product => product.productId === productId);
+    let currentCart = JSON.parse(localStorage.getItem("productId"))
+    const existingProduct = currentCart.find(product => product.productId === productId);
     if (existingProduct) {
         ++existingProduct.productClick
         addToastMessage(existingProduct)
@@ -104,10 +130,10 @@ function addProductToObject(productId, productName, productPrice) {
             productPrice: productPrice,
             productClick: 1
         };
-        productsObject.push(newProduct);
+        currentCart.push(newProduct);
         addToastMessage(newProduct)
     }
-    localStorage.setItem("productId", JSON.stringify(productsObject))
+    localStorage.setItem("productId", JSON.stringify(currentCart))
 }
 
 function addToastMessage(array) {

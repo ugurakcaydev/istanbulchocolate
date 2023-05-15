@@ -1,10 +1,13 @@
-async function checkusers(name_id, password_id) {
+const loginButton = document.querySelector("#loginButton")
 
-    var valuename = document.getElementById(name_id).value
-    var valuepassword = document.getElementById(password_id).value
+loginButton.addEventListener("click", async (event) => {
+    // var valuename = document.getElementById(name_id).value
+    // var valuepassword = document.getElementById(password_id).value
+    // let token = JSON.parse(localStorage.getItem("responseJson"))
+    event.preventDefault();
     const body = {
-        username: "kadir311",
-        password: "taner311A@"
+        username: "aaaAa",
+        password: "aaaA1aA"
     }
     const url = "http://localhost:5025/api/authenticate/login"
     const response = await fetch(url, {
@@ -17,26 +20,32 @@ async function checkusers(name_id, password_id) {
     })
     const responseJson = await response.json()
     localStorage.setItem("responseJson", JSON.stringify(responseJson))
-    let checkSuccess = responseJson.isSuccess
-    // let token = JSON.parse(localStorage.getItem("responseJson"))
+    console.log(responseJson.token);
+    let token = responseJson.token
     // let expiration = JSON.parse(localStorage.getItem("responseJson")).expiration
     // let isSuccess = JSON.parse(localStorage.getItem("responseJson")).isSuccess
-    if (checkSuccess) {
+    if (token) {
         //kullanıcı varsa yapılıcak işlemler
-        getToastMessage(checkSuccess)
+        getToastMessage(token)
         //  window.location.href = "../HomePage/home.html";
 
     } else {
         //kullanıcı yoksa yapılacak işlemler
-        getToastMessage(checkSuccess)
+        getToastMessage(token)
 
     }
-}
+})
+
+// async function checkusers(/*name_id, password_id*/event) {
+
+// }
 
 function getToastMessage(boolean) {
     if (boolean) {
         Toastify({
             text: "Login successful",
+            destination: "../HomePage/home.html",
+            newWindow: true,
             className: "info",
             gravity: "top", // `top` or `bottom`
             position: "center", // `left`, `center` or `right`
@@ -46,6 +55,7 @@ function getToastMessage(boolean) {
                 background: "linear-gradient(to right, rgb(0,176,155),rgb(150,201,61))",
             }
         }).showToast();
+         window.location.href = "../HomePage/home.html"
     } else {
         Toastify({
             text: "Username or password is wrong",
@@ -66,30 +76,31 @@ function getToastMessage(boolean) {
 
 function showPassword(id, el) {
     let x = document.getElementById(id)
+    console.log(x.type);
     if (x.type == "password") {
         x.type = "text";
-        el.src = "/icons/1.png"
+        el.src = "../icons/1.png"
     } else {
         x.type = "password";
-        el.src = "/icons/2.png"
+        el.src = "../icons/2.png"
     }
 }
 
 var typingEffect = new Typed(".multiText", {
-    strings: ["The first step for Istanbul Chocolates to become one of the biggest brands in Turkey's cocoa, chocolate and confectionery sector is taken with its first store in Beyoğlu. With more than 200 product types, classic varieties such as madlens, specialties, dragees, special day chocolates and gift baskets, the company's six city stores, five stores in major metropolitan airports and a small mail order branch in Beyoğlu lead the sector. The first store is a very important step. Because this first store in Beyoğlu is the first place where sweet lovers and Istanbul Chocolates meet."],
+    strings: [" İstanbul Çikolataları, Türkiye'nin önde gelen çikolata üreticilerinden biridir. Şirketin kökeni, 1976 yılına dayanmaktadır.O dönemlerde İstanbul'un küçük bir çikolata üreticisi olan İstanbul Çikolataları, kaliteli ürünleriyle kısa sürede müşterilerin gözdesi haline gelmiştir.Şirket, zamanla üretimini genişletmiş, ürün yelpazesini zenginleştirmiş ve yenilikçi ürünler sunmaya başlamıştır.Günümüzde ."],
     loop: false,
     typeSpeed: 40,
 })
 
-function clickbuton() {
-    var mybuton = document.querySelector('.login-Button');
-    mybuton.style.transition = "transform 0.08s ease-in-out";
+// function clickbuton() {
+//     var mybuton = document.querySelector('.login-Button');
+//     mybuton.style.transition = "transform 0.08s ease-in-out";
 
-    mybuton.addEventListener('mousedown', function () {
-        mybuton.style.transform = 'scale(0.86)';
-    });
+//     mybuton.addEventListener('mousedown', function () {
+//         mybuton.style.transform = 'scale(0.86)';
+//     });
 
-    mybuton.addEventListener('mouseup', function () {
-        mybuton.style.transform = 'scale(1)';
-    });
-}
+//     mybuton.addEventListener('mouseup', function () {
+//         mybuton.style.transform = 'scale(1)';
+//     });
+// }

@@ -1,40 +1,38 @@
 //AÇILACAK BU KOD
-// const registerButton = document.querySelector("#registerButton")
-// registerButton.addEventListener("click", async () => {
-//     // const userNameValue = document.querySelector("#userName").value
-//     // const passwordValue = document.querySelector("#password").value
-//     // const againPasswordValue = document.querySelector("#againPassword").value
-//     // const nameValue = document.querySelector("#name").value
-//     // const phoneValue = document.querySelector("#phoneNumber").value
-//     // const emailValue = document.querySelector("#email").value
-
-//     const body = {
-//         username: "aaaAa",
-//         fullname: "aaa",
-//         email: "aaa@gmail.com",
-//         phoneNumber: "5555555555",
-//         gender: "diğer",
-//         address: "adadada",
-//         password: "aaaA1aA",
-//         confirmPassword: "aaaA1aA"
-//     }
-//     const response = await fetch("http://localhost:5025/api/authenticate/registeradmin", {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json;charset=UTF-8"'
-//         },
-//         body: JSON.stringify(body)
-//     })
-//     const responseJson = await response.json()
-//     let statusValue = responseJson.status
-//     let messageValue = responseJson.message
-//     let successValue = responseJson.isSuccess
-//     console.log(statusValue);
-//     // localStorage.setItem("statusValue", statusValue)
-//     console.log(responseJson)
-//     console.log("userName = ", JSON.stringify(body.username), "fullName = ", JSON.stringify(body.fullname), "email = ", JSON.stringify(body.email), "phoneNumber = ", JSON.stringify(body.phoneNumber), "gender = ", JSON.stringify(body.gender), "adress = ", JSON.stringify(body.address), "password = ", JSON.stringify(body.password), "confirmPassword = ", JSON.stringify(body.confirmPassword))
-// })
+const registerButton = document.querySelector("#registerButton")
+registerButton.addEventListener("click", async () => {
+    // const userNameValue = document.querySelector("#userName").value
+    // const passwordValue = document.querySelector("#password").value
+    // const againPasswordValue = document.querySelector("#againPassword").value
+    // const nameValue = document.querySelector("#name").value
+    // const phoneValue = document.querySelector("#phoneNumber").value
+    // const emailValue = document.querySelector("#email").value
+    const body = {
+        username: "aaaAa",
+        fullname: "aaa",
+        email: "aaa@gmail.com",
+        phoneNumber: "5555555555",
+        gender: "diğer",
+        address: "adadada",
+        password: "aaaA1aA",
+        confirmPassword: "aaaA1aA"
+    }
+    const response = await fetch("http://localhost:5025/api/authenticate/registeradmin", {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json;charset=UTF-8"'
+        },
+        body: JSON.stringify(body)
+    })
+    const responseJson = await response.json()
+    let statusValue = responseJson.status
+    let messageValue = responseJson.message
+    let successValue = responseJson.isSuccess
+    console.log(responseJson);
+    // localStorage.setItem("statusValue", statusValue)
+    console.log("userName = ", JSON.stringify(body.username), "fullName = ", JSON.stringify(body.fullname), "email = ", JSON.stringify(body.email), "phoneNumber = ", JSON.stringify(body.phoneNumber), "gender = ", JSON.stringify(body.gender), "adress = ", JSON.stringify(body.address), "password = ", JSON.stringify(body.password), "confirmPassword = ", JSON.stringify(body.confirmPassword))
+})
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // async function register(name_id, password_id, email_id) {
 //     // var valuename = document.getElementById(name_id).value
