@@ -113,6 +113,10 @@ body {
 
 }
 
+.password-Box .icon img:hover {
+    cursor: pointer;
+}
+
 .entryarea input {
     width: 100%;
 

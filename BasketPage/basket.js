@@ -1,13 +1,11 @@
-let storedProductId = localStorage.getItem("productId")
-let basketProductArray = storedProductId ? JSON.parse(storedProductId) : [];
+let storedProduct = localStorage.getItem("Cart")
+let basketProductArray = storedProduct ? JSON.parse(storedProduct) : [];
 let cartProducts = document.querySelector("#cartProducts")
 checkEmpty(basketProductArray)
 calculateTotalPrice(basketProductArray)
 basketProductArray.forEach(product => {
     Cart(product)
-
 })
-
 function Cart(product) {
 
     let cartProductDiv = document.createElement("div")
@@ -100,6 +98,7 @@ function calculateTotalPrice(array) {
     } else if ((totalPrice + cargo) < 50) {
         document.querySelectorAll(".confirmBasket").forEach(item => {
             item.classList.add("disabledButton")
+            item.disabled = true
         })
         freeCargoDom.style.display = "flex"
         freeCargoDom.innerHTML = `Minimum sepet tutarı 50TL olmalıdır. <span> ${Number(parseFloat(50 - (totalPrice + cargo)).toFixed(2))} TL'lik ürün ekleyin ! </span>`
@@ -107,6 +106,7 @@ function calculateTotalPrice(array) {
     } else {
         document.querySelectorAll(".confirmBasket").forEach(item => {
             item.classList.remove("disabledButton")
+            item.disabled = false
         })
         document.querySelector(".freeCargoDom").style.display = "none"
         cargoPrice.style.textDecoration = "none";
@@ -128,7 +128,7 @@ function removeProduct(productId, productName) {
         basketProductArray.splice(productIndex, 1);
 
         // Sepeti güncelle
-        localStorage.setItem('productId', JSON.stringify(basketProductArray));
+        localStorage.setItem('Cart', JSON.stringify(basketProductArray));
 
         window.location.href = "../BasketPage/basket.html"
     } else {
@@ -177,30 +177,87 @@ function checkEmpty(array) {
 
 let result = localStorage.getItem("responseJson")
 let responseJson = JSON.parse(result);
-let issuccess1Button = document.querySelector(".issuccess1")
-let issuccess2Button = document.querySelector(".issuccess2")
+let issuccessButton = document.querySelector(".issuccess2")
 if (responseJson.isSuccess) {
-    issuccess1Button.innerHTML = "Sepetim"
-    issuccess1Button.href = "../BasketPage/basket.html"
-    issuccess2Button.innerHTML = "Çıkış Yap"
+    issuccessButton.innerHTML = "Çıkış Yap"
 }
-issuccess2Button.addEventListener("click", async () => {
+issuccessButton.addEventListener("click", async (event) => {
     try {
-        const url = "http://localhost:5025/api/authenticate/LogOut"
-        localStorage.setItem("responseJson", "")
-        localStorage.setItem("productId", "[]")
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json;charset=UTF-8"'
-            },
-            body: responseJson.token
-        })
-        console.log(response);
+        if (responseJson.isSuccess) {
+            var result = confirm("Siteden Çıkılsın mı ?")
+            if (result) {
+                const url = "http://localhost:5025/api/authenticate/LogOut"
+                localStorage.setItem("Cart", "[]")
+                responseJson.isSuccess = false
+                var updatedResponse = JSON.stringify(responseJson)
+                localStorage.setItem("responseJson", updatedResponse);
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'token': responseJson.token,
+                        'Content-Type': 'application/json;charset=UTF-8"'
+                    },
+                })
+                const responseData = await response.json(); // Yanıtı JSON olarak almak için
+                console.log(responseData);
+            } else {
+                event.preventDefault()
+            }
+        }
     } catch {
         console.error("ERROR")
     }
+})
+let confirmBasketButtons = document.querySelectorAll(".confirmBasket")
+confirmBasketButtons.forEach(button => {
+    button.addEventListener("click", async () => {
+        try {
+            const url = "http://localhost:5025/api/authenticate/isValidToken"
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'token': responseJson.token,
+                    'Content-Type': 'application/json;charset=UTF-8"'
+                },
+            })
+            const responseData = await response.json(); // Yanıtı JSON olarak almak için
+            // Özelleştirilmiş onay kutusunu görüntüle
+            const customConfirm = document.getElementById("custom-confirm");
+            customConfirm.style.display = "grid";
+
+            // Mesajı ve düğmeleri güncelle
+            const message = document.querySelector(".confirm .message");
+            const acceptButton = document.getElementById("custom-confirm-accept");
+            const cancelButton = document.getElementById("custom-confirm-cancel");
+            if (responseData.isSuccess === true) {
+                message.textContent = "Sepetiniz Başarıyla Onaylandı"
+                acceptButton.addEventListener("click", () => {
+                    localStorage.setItem("Cart", "[]")
+                    window.location.href = "../ProductsPage/products.html"
+                })
+                cancelButton.addEventListener("click", () => {
+                    localStorage.setItem("Cart", "[]")
+                    window.location.href = "../HomePage/home.html"
+                })
+            } else if (responseData.isSuccess === false) {
+                message.textContent = "Sepetinizi Onaylamak İçin Giriş Yapmalısınız !"
+                message.style.color = "red"
+                acceptButton.textContent = "Giriş Yap";
+                cancelButton.textContent = "İptal";
+                acceptButton.addEventListener("click", () => {
+                    window.location.href = "../LoginPage/login.html"
+                })
+                cancelButton.addEventListener("click", () => {
+                    customConfirm.style.display = "none"
+                })
+            }
+        } catch {
+            console.error("ERRORR")
+        }
+
+    })
 })
 
 const backToTopButton = document.querySelector("#back-to-top-btn");

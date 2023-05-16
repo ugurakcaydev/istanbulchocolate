@@ -20,7 +20,6 @@ loginButton.addEventListener("click", async (event) => {
     })
     const responseJson = await response.json()
     localStorage.setItem("responseJson", JSON.stringify(responseJson))
-    console.log(responseJson.token);
     let token = responseJson.token
     // let expiration = JSON.parse(localStorage.getItem("responseJson")).expiration
     // let isSuccess = JSON.parse(localStorage.getItem("responseJson")).isSuccess
@@ -55,7 +54,7 @@ function getToastMessage(boolean) {
                 background: "linear-gradient(to right, rgb(0,176,155),rgb(150,201,61))",
             }
         }).showToast();
-         window.location.href = "../HomePage/home.html"
+        window.location.href = "../HomePage/home.html"
     } else {
         Toastify({
             text: "Username or password is wrong",

@@ -1,26 +1,33 @@
 let result = localStorage.getItem("responseJson")
 let responseJson = JSON.parse(result);
-let issuccess1Button = document.querySelector(".issuccess1")
-let issuccess2Button = document.querySelector(".issuccess2")
+let issuccessButton = document.querySelector(".issuccess2")
 if (responseJson.isSuccess) {
-    issuccess1Button.innerHTML = "Sepetim"
-    issuccess1Button.href = "../BasketPage/basket.html"
-    issuccess2Button.innerHTML = "Çıkış Yap"
+    issuccessButton.innerHTML = "Çıkış Yap"
 }
-issuccess2Button.addEventListener("click", async () => {
+issuccessButton.addEventListener("click", async (event) => {
     try {
-        const url = "http://localhost:5025/api/authenticate/LogOut"
-        localStorage.setItem("responseJson", "")
-        localStorage.setItem("productId", "[]")
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json;charset=UTF-8"'
-            },
-            body: responseJson.token
-        })
-        console.log(response);
+        if (responseJson.isSuccess) {
+            var result = confirm("Siteden Çıkılsın mı ?")
+            if (result) {
+                const url = "http://localhost:5025/api/authenticate/LogOut"
+                localStorage.setItem("Cart", "[]")
+                responseJson.isSuccess = false
+                var updatedResponse = JSON.stringify(responseJson)
+                localStorage.setItem("responseJson", updatedResponse);
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'token': responseJson.token,
+                        'Content-Type': 'application/json;charset=UTF-8"'
+                    },
+                })
+                const responseData = await response.json(); // Yanıtı JSON olarak almak için
+                console.log(responseData);
+            } else {
+                event.preventDefault()
+            }
+        }
     } catch {
         console.error("ERROR")
     }

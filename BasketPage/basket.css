@@ -244,7 +244,7 @@ a {
 }
 
 .leftCart {
-    width: 34%;
+    width: 35%;
     display: flex;
     align-items: center;
 }
@@ -322,7 +322,6 @@ a {
 
 .disabledButton {
     background-color: gray;
-    cursor: default;
     transition: background-color 1s ease-in-out;
 }
 
@@ -407,4 +406,39 @@ a {
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
     display: none;
+}
+
+.confirm {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    gap: 2rem;
+}
+
+.confirm .message {
+    margin-bottom: 10px;
+    font-size: 21px;
+    color: #88B916;
+    text-align: center;
+}
+
+.confirm .buttons {
+    text-align: center;
+    justify-content: center;
+}
+
+.confirm .buttons button {
+    margin: 0 5px;
+    padding: .5rem 1rem;
+    background-color: #88B916;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #ccc;
 }

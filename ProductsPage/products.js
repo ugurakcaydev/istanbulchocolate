@@ -1,32 +1,40 @@
 
 let result = localStorage.getItem("responseJson")
 let responseJson = JSON.parse(result);
-let issuccess1Button = document.querySelector(".issuccess1")
-let issuccess2Button = document.querySelector(".issuccess2")
-if (responseJson.token) {
-    issuccess1Button.innerHTML = "Sepetim"
-    issuccess1Button.href = "../BasketPage/basket.html"
-    issuccess2Button.innerHTML = "Çıkış Yap"
+console.log(responseJson);
+let issuccessButton = document.querySelector(".issuccess2")
+if (responseJson.isSuccess) {
+    issuccessButton.innerHTML = "Çıkış Yap"
 }
-
-issuccess2Button.addEventListener("click", async () => {
+issuccessButton.addEventListener("click", async (event) => {
     try {
-        const url = "http://localhost:5025/api/authenticate/LogOut"
-        localStorage.setItem("responseJson", "")
-        localStorage.setItem("productId", "[]")
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json;charset=UTF-8"'
-            },
-            body: responseJson.token
-        })
-        console.log(response);
+        if (responseJson.isSuccess) {
+            var result = confirm("Siteden Çıkılsın mı ?")
+            if (result) {
+                const url = "http://localhost:5025/api/authenticate/LogOut"
+                localStorage.setItem("Cart", "[]")
+                responseJson.isSuccess = false
+                var updatedResponse = JSON.stringify(responseJson)
+                localStorage.setItem("responseJson", updatedResponse);
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'token': responseJson.token,
+                        'Content-Type': 'application/json;charset=UTF-8"'
+                    },
+                })
+                const responseData = await response.json(); // Yanıtı JSON olarak almak için
+                console.log(responseData);
+            } else {
+                event.preventDefault()
+            }
+        }
     } catch {
         console.error("ERROR")
     }
 })
+
 let products = document.querySelector(".products")
 let productsObject = []
 const getProduct = async () => {
@@ -35,7 +43,6 @@ const getProduct = async () => {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
-                'Authorization': 'Bearer ' + responseJson.token,
                 'Content-Type': 'application/json;charset=UTF-8"'
             },
         });
@@ -118,7 +125,7 @@ function addProduct(item) {
 }
 
 function addProductToObject(productId, productName, productPrice) {
-    let currentCart = JSON.parse(localStorage.getItem("productId"))
+    let currentCart = JSON.parse(localStorage.getItem("Cart"))
     const existingProduct = currentCart.find(product => product.productId === productId);
     if (existingProduct) {
         ++existingProduct.productClick
@@ -133,7 +140,7 @@ function addProductToObject(productId, productName, productPrice) {
         currentCart.push(newProduct);
         addToastMessage(newProduct)
     }
-    localStorage.setItem("productId", JSON.stringify(currentCart))
+    localStorage.setItem("Cart", JSON.stringify(currentCart))
 }
 
 function addToastMessage(array) {
