@@ -205,8 +205,14 @@ body {
     border: 1px solid #000;
     font-size: larger;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
 
 }
+
+.container .entryarea .button-Box .loginButton:hover {
+    background-color: rgb(250, 195, 128);
+}
+
 
 .container .forget-Text {
     display: flex;
@@ -238,6 +244,7 @@ body {
 
 }
 
+
 .container .newacc-Box .createNew {
     padding: 0.6rem;
     font-size: large;
@@ -245,7 +252,13 @@ body {
 
     border: none;
     border-radius: 16px 0px;
+    transition: 0.3s ease-in-out;
 
+
+}
+
+.container .newacc-Box .createNew:hover {
+    background-color: rgb(250, 195, 128);
 }
 
 .container .newacc-Box .createNew a {
@@ -255,6 +268,7 @@ body {
 
 .container .newacc-Box .createNew a:hover {
     text-decoration: underline;
+
 
 }
 
