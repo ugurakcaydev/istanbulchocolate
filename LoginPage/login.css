@@ -139,21 +139,19 @@ body {
     align-items: center;
     justify-content: start;
     position: absolute;
+    width: 100%;
     height: 2.5rem;
     padding-left: 10px;
     color: rgb(240, 229, 210);
     font-size: large;
-    transition: 0.2s ease;
+    transition: all 0.2s ease;
 
 
 
 }
 
-.entryarea input:focus~label,
-.entryarea input:valid~label {
-    color: antiquewhite;
-    transform: translate(-10px, -33px) scale(0.80);
-
+.entryarea input:focus~label {
+    transform: translate(-10%, -80%) scale(0.80);
 }
 
 .container .entryarea .remember {
