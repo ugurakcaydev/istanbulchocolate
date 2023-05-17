@@ -86,9 +86,9 @@ function showPassword(id, el) {
 }
 
 var typingEffect = new Typed(".multiText", {
-    strings: [" İstanbul Çikolataları, Türkiye'nin önde gelen çikolata üreticilerinden biridir. Şirketin kökeni, 1976 yılına dayanmaktadır.O dönemlerde İstanbul'un küçük bir çikolata üreticisi olan İstanbul Çikolataları, kaliteli ürünleriyle kısa sürede müşterilerin gözdesi haline gelmiştir.Şirket, zamanla üretimini genişletmiş, ürün yelpazesini zenginleştirmiş ve yenilikçi ürünler sunmaya başlamıştır.Günümüzde ."],
+    strings: [" İstanbul Çikolataları, Türkiye'nin önde gelen çikolata üreticilerinden biridir. Şirketin kökeni, 1976 yılına dayanmaktadır.O dönemlerde İstanbul'un küçük bir çikolata üreticisi olan İstanbul Çikolataları, kaliteli ürünleriyle kısa sürede müşterilerin gözdesi haline gelmiştir.Şirket, zamanla üretimini genişletmiş, ürün yelpazesini zenginleştirmiş ve yenilikçi ürünler sunmaya başlamıştır.Günümüzde....sürede müşterilerin gözdesi haline gelmiştir.Şirket, zamanla üretimini genişletmiş, ürün yelpazesini zenginleştirmiş ve yenilikçi ürünler sunmaya başlamıştır.Günümüzde..."],
     loop: false,
-    typeSpeed: 40,
+    typeSpeed: 35,
 })
 
 // function clickbuton() {

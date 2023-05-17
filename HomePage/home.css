@@ -146,11 +146,10 @@ a {
 .welcomeDiv {
     width: 100%;
     background-color: white;
-    padding: 2rem 22rem;
+    padding: 5rem 22rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #161F47;
+    justify-content: space-evenly;
 }
 
 .welcomeDivLeft {
@@ -165,7 +164,7 @@ a {
 }
 
 .welcomeDivLeft span {
-    color: wheat;
+    color: #88B916;
     font-size: 28px;
 }
 
@@ -174,7 +173,7 @@ a {
     line-height: 1.8rem;
     font-size: 16px;
     font-weight: 600;
-    color: white;
+    color: black;
 
 }
 
@@ -187,11 +186,9 @@ a {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 2rem 22rem;
+    padding: 8rem 22rem;
     background-color: #161f4793;
     color: white;
-    border-bottom: 1px solid #ccc;
-
 }
 
 .francLeft {
@@ -239,7 +236,7 @@ a {
 
 .containerAbout {
     width: 100%;
-    background-color: #cecfcf;
+    background-color: white;
 }
 
 .aboutUs {
@@ -269,15 +266,14 @@ a {
 .aboutLeft p,
 .aboutRight p {
     line-height: 1.4rem;
-    color: #7a7a7a;
     font-family: 'Source Serif Pro', serif;
     text-align: center;
 }
 
-.aboutRight h3 {
+.aboutRight div {
     text-align: center;
-    font-size: 60px;
-    color: #202c60;
+    font-size: 50px;
+    color: #88B916;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -298,8 +294,8 @@ a {
     font-size: 36px;
     line-height: 1.2em;
     font-weight: 600;
-    color: #202c60;
     text-align: center;
+    color: #88B916;
 }
 
 .blueDiv {
@@ -310,7 +306,7 @@ a {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background-color: #ffa34e;
+    background-color: #161f47;
     transition: all 1s ease;
 }
 
@@ -336,21 +332,22 @@ a {
     display: block;
     opacity: 1;
     left: 16rem;
-    transition: left 1s ease, opacity 2s ease-in-out;
+    transition: left 1s ease, opacity 2s ease;
 }
 
 .leftSide p:first-child {
     font-size: 20px;
+    color: #88B916;
 
 }
 
 .leftSide p:last-child {
     font-size: 30px;
-
+    color: #88B916;
 }
 
 .leftSide div {
-    color: #000;
+    color: white;
     font-size: 15px;
     line-height: 1.6;
 }
@@ -417,7 +414,6 @@ a {
     display: flex;
     width: 100%;
     height: 20%;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.48);
     padding: 10px;
     margin-bottom: 3rem;

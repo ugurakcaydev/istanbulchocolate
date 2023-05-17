@@ -47,3 +47,22 @@ backToTopButton.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+function showAbout() {
+    var aboutSection = document.getElementById('aboutSection');
+    var offsetTop = aboutSection.offsetTop;
+    var scrollDuration = 800; // Kaydırma süresi (milisaniye cinsinden)
+    var scrollStep = Math.abs(offsetTop - window.pageYOffset) / scrollDuration * 15; // Hesaplanan kaydırma adımı
+    var direction = offsetTop > window.pageYOffset ? 1 : -1; // Kaydırma yönü
+
+    var scrollInterval = setInterval(function () {
+        var remainingDistance = Math.abs(offsetTop - window.pageYOffset);
+        var scrollAmount = Math.min(scrollStep, remainingDistance) * direction;
+        window.scrollBy(0, scrollAmount);
+
+        if (remainingDistance <= 1 || (direction === -1 && window.pageYOffset === 0)) {
+            clearInterval(scrollInterval);
+        }
+    }, 15);
+
+}

@@ -23,7 +23,7 @@
                 <div class="homepage">
                     <a href="../HomePage/home.html">Home</a>
                 </div>
-                <div class="about button"><a href="#">About</a></div>
+                <div class="about button"><a href="#" onclick="showAbout(); return false;">About</a></div>
                 <div class="contact"><a href="../ProductsPage/products.html">Ürünlerimiz</a></div>
             </div>
             <div class="mainheader">
@@ -58,7 +58,7 @@
                     </button>
                 </div>
             </div>
-            <div class="containerAbout">
+            <div id="aboutSection" class="containerAbout">
                 <div class="aboutUs">
                     <div class="aboutLeft">
                         <img src="../images/2.jpg" alt="">
@@ -79,7 +79,11 @@
                             repudiandae vitae sapiente iure similique illo at.</p>
                     </div>
                     <div class="aboutRight">
-                        <h3 title="">İstanbul Çikolatası'nın Hikayesi</h3>
+
+                        <div>
+                            <span>İstanbul Çikolatası'nın <br>
+                                Hikayesi</span>
+                        </div>
                         <p>İstanbul Çikolatarı, zengin ve lezzetli çikolata deneyimleri sunan köklü bir markadır.
                             Hikayemiz, uzun yıllar önce İstanbul'un sokaklarında başlamıştır. Şehrin tarihine, kültürüne
                             ve renkliliğine ilham olan bu eşsiz lezzet, geleneksel çikolata ustalarının elinde hayat
