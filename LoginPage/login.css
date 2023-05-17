@@ -37,7 +37,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-right: 2px dashed white; 
+    border-right: 2px dashed white;
     position: relative;
     width: 100%;
     padding: 3rem;
@@ -285,6 +285,9 @@ body {
 .container .right-Box span {
     width: 100%;
     max-height: 600px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -302,7 +305,4 @@ body {
 
 .multiText {
     word-wrap: break-word;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Times New Roman', Times, serif;
 }
