@@ -134,7 +134,8 @@ body {
     width: 75%;
 }
 
-.container .left-Box .entryarea label {
+.username-Box label,
+.password-Box label {
     display: flex;
     align-items: center;
     justify-content: start;
