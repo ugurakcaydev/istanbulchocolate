@@ -75,7 +75,6 @@ function getToastMessage(boolean) {
 
 function showPassword(id, el) {
     let x = document.getElementById(id)
-    console.log(x.type);
     if (x.type == "password") {
         x.type = "text";
         el.src = "../icons/1.png"

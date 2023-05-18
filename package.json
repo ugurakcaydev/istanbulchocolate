@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "swiper": "^9.3.2",
     "toastify-js": "^1.12.0"
   }
 }

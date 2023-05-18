@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     color: antiquewhite;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -13,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/8.jpg");
+    background-image: url("../images/8.jpg");
     background-size: cover;
     /*161f47*/
 }
@@ -29,7 +28,6 @@ body {
     border-left: 3px solid white;
     border-right: 3px solid white;
     background-color: rgba(0, 0, 0, 0.55);
-
 }
 
 .container .left-Box {
@@ -41,8 +39,6 @@ body {
     position: relative;
     width: 100%;
     padding: 3rem;
-
-
 }
 
 .container .left-Box .logo-Box {
@@ -56,12 +52,9 @@ body {
 .container .left-Box .logo {
     width: 12rem;
     height: 12rem;
-
     background-image: url(/logo.JPG);
     background-size: cover;
     border-radius: 50%;
-
-
 }
 
 .container .left-Box .header1 {
@@ -77,8 +70,6 @@ body {
     font-size: x-large;
     text-align: center;
     font-weight: 650;
-
-
 }
 
 
@@ -88,9 +79,6 @@ body {
     flex-direction: column;
     width: 100%;
     height: 15rem;
-
-
-
 }
 
 .container .left-Box .entryarea .username-Box,
@@ -115,10 +103,7 @@ body {
     font-size: large;
     margin-bottom: 2rem;
     padding-left: .7rem;
-
 }
-
-
 
 .icon {
     position: absolute;
@@ -164,9 +149,7 @@ body {
 }
 
 .container .entryarea .button-Box {
-
     width: 100%;
-
 }
 
 .container .entryarea .button-Box .loginButton {
@@ -181,7 +164,6 @@ body {
     font-size: larger;
     cursor: pointer;
     transition: color 1s ease, background-color 1s ease;
-
 }
 
 .container .entryarea .button-Box .loginButton:hover {
@@ -189,14 +171,11 @@ body {
     color: #88b916;
 }
 
-
 .container .forget-Text {
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 1rem;
-
 }
 
 .container .forget-Text a {
@@ -206,7 +185,6 @@ body {
 
 .container .forget-Text:hover {
     cursor: pointer;
-
 }
 
 .container .newacc-Box {
@@ -216,7 +194,6 @@ body {
     width: 100%;
     font-size: larger;
     margin-top: 2rem;
-
 }
 
 
@@ -244,8 +221,6 @@ body {
 .container .newacc-Box .createNew:hover a {
     color: #88b916;
 }
-
-
 
 .container .right-Box {
     display: flex;
@@ -280,8 +255,6 @@ body {
     font-weight: 500;
     font-family: 'Times New Roman', Times, serif;
 }
-
-
 
 /**/
 .multidiv {

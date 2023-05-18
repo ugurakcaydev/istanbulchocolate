@@ -34,34 +34,6 @@ registerButton.addEventListener("click", async () => {
     console.log("userName = ", JSON.stringify(body.username), "fullName = ", JSON.stringify(body.fullname), "email = ", JSON.stringify(body.email), "phoneNumber = ", JSON.stringify(body.phoneNumber), "gender = ", JSON.stringify(body.gender), "adress = ", JSON.stringify(body.address), "password = ", JSON.stringify(body.password), "confirmPassword = ", JSON.stringify(body.confirmPassword))
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// async function register(name_id, password_id, email_id) {
-//     // var valuename = document.getElementById(name_id).value
-//     // var valuepassword = document.getElementById(password_id).value
-//     // var valueemail = document.getElementById(email_id).value
-//     const body = {
-//         username: "kado",
-//         email: "taner@gmail.com",
-//         password: "t"
-//     }
-//     const response = await fetch("http://localhost:5025/api/authenticate/registeradmin", {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json;charset=UTF-8"'
-//         },
-//         body: JSON.stringify(body)
-//     })
-//     const responseJson = await response.json()
-//     let statusValue = responseJson.status
-//     let messageValue = responseJson.message
-//     let successValue = responseJson.isSuccess
-//     // console.log(statusValue);
-//     // // localStorage.setItem("statusValue", statusValue)
-//     // console.log(responseJson)
-//     // console.log("name = ", JSON.stringify(body.username), "email = ", JSON.stringify(body.email), "password = ", JSON.stringify(body.password))
-// }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 const address = document.querySelector("#address")
 address.addEventListener("input", () => {
     let value = address.value
@@ -243,7 +215,6 @@ function checkAddress(input, value) {
     console.log(value);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 function clickbuton() {
     var mybuton = document.querySelector('.button');

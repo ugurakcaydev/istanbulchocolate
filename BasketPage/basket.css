@@ -84,9 +84,13 @@ body {
 .navbar .rightmenu {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 1rem;
     gap: 1rem;
+}
+
+.rightmenu {
+    min-width: 263.05px;
 }
 
 .navbar .leftmenu div:first-child a {

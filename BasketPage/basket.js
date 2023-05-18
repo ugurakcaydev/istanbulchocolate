@@ -223,6 +223,7 @@ confirmBasketButtons.forEach(button => {
                 },
             })
             const responseData = await response.json(); // Yanıtı JSON olarak almak için
+            console.log(responseData.isSuccess);
             // Özelleştirilmiş onay kutusunu görüntüle
             const customConfirm = document.getElementById("custom-confirm");
             customConfirm.style.display = "grid";
@@ -231,7 +232,7 @@ confirmBasketButtons.forEach(button => {
             const message = document.querySelector(".confirm .message");
             const acceptButton = document.getElementById("custom-confirm-accept");
             const cancelButton = document.getElementById("custom-confirm-cancel");
-            if (responseData.isSuccess === true) {
+            if (responseJson.isSuccess === true) {
                 message.textContent = "Sepetiniz Başarıyla Onaylandı"
                 acceptButton.addEventListener("click", () => {
                     localStorage.setItem("Cart", "[]")
@@ -241,7 +242,7 @@ confirmBasketButtons.forEach(button => {
                     localStorage.setItem("Cart", "[]")
                     window.location.href = "../HomePage/home.html"
                 })
-            } else if (responseData.isSuccess === false) {
+            } else {
                 message.textContent = "Sepetinizi Onaylamak İçin Giriş Yapmalısınız !"
                 message.style.color = "red"
                 acceptButton.textContent = "Giriş Yap";

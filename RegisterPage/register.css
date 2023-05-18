@@ -99,7 +99,6 @@ form .category label {
   cursor: pointer;
 }
 
-
 form .category label .dot {
   height: 18px;
   width: 18px;
@@ -109,13 +108,6 @@ form .category label .dot {
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
-
-/* #dot-1:checked~.category label .one,
-#dot-2:checked~.category label .two,
-#dot-3:checked~.category label .three {
-  background: #3F0110;
-  border-color: #d9d9d9;
-} */
 
 .gender-details #dot {
   display: none;
