@@ -103,3 +103,29 @@ var typingEffect = new Typed(".multiText", {
 //         mybuton.style.transform = 'scale(1)';
 //     });
 // }
+
+
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const usernameLabel = document.querySelector('.username-Box label');
+const passwordLabel = document.querySelector('.password-Box label');
+
+usernameInput.addEventListener('focus', () => {
+    usernameLabel.style.transform = 'translate(-20%, -150%) scale(0.80)';
+});
+
+usernameInput.addEventListener('blur', () => {
+    if (usernameInput.value === '') {
+        usernameLabel.style.transform = 'translate(0, 0) scale(1)';
+    }
+});
+
+passwordInput.addEventListener('focus', () => {
+    passwordLabel.style.transform = 'translate(-20%, -150%) scale(0.80)';
+});
+
+passwordInput.addEventListener('blur', () => {
+    if (passwordInput.value === '') {
+        passwordLabel.style.transform = 'translate(0, 0) scale(1)'
+    }
+});
