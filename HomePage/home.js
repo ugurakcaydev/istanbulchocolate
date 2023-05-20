@@ -82,4 +82,9 @@ const swiper = new Swiper('.swiper', {
         el: ".swiper-pagination",
 
     },
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+    speed: 5000,
 });
