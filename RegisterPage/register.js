@@ -1,68 +1,69 @@
 //AÇILACAK BU KOD
 const registerButton = document.querySelector("#registerButton")
 registerButton.addEventListener("click", async () => {
+    let deneme = checkDeneme()
     // const userNameValue = document.querySelector("#userName").value
     // const passwordValue = document.querySelector("#password").value
     // const againPasswordValue = document.querySelector("#againPassword").value
     // const nameValue = document.querySelector("#name").value
     // const phoneValue = document.querySelector("#phoneNumber").value
     // const emailValue = document.querySelector("#email").value
-    const body = {
-        username: "aaaAa",
-        fullname: "aaa",
-        email: "aaa@gmail.com",
-        phoneNumber: "5555555555",
-        gender: "diğer",
-        address: "adadada",
-        password: "aaaA1aA",
-        confirmPassword: "aaaA1aA"
-    }
-    const response = await fetch("http://localhost:5025/api/authenticate/registeradmin", {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json;charset=UTF-8"'
-        },
-        body: JSON.stringify(body)
-    })
-    const responseJson = await response.json()
-    let statusValue = responseJson.status
-    let messageValue = responseJson.message
-    let successValue = responseJson.isSuccess
-    console.log(responseJson);
-    // localStorage.setItem("statusValue", statusValue)
-    console.log("userName = ", JSON.stringify(body.username), "fullName = ", JSON.stringify(body.fullname), "email = ", JSON.stringify(body.email), "phoneNumber = ", JSON.stringify(body.phoneNumber), "gender = ", JSON.stringify(body.gender), "adress = ", JSON.stringify(body.address), "password = ", JSON.stringify(body.password), "confirmPassword = ", JSON.stringify(body.confirmPassword))
+    // const body = {
+    //     username: "aaaAa",
+    //     fullname: "aaa",
+    //     email: "aaa@gmail.com",
+    //     phoneNumber: "5555555555",
+    //     gender: "diğer",
+    //     address: "adadada",
+    //     password: "aaaA1aA",
+    //     confirmPassword: "aaaA1aA"
+    // }
+    // const response = await fetch("http://localhost:5025/api/authenticate/registeradmin", {
+    //     method: 'POST',
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json;charset=UTF-8"'
+    //     },
+    //     body: JSON.stringify(body)
+    // })
+    // const responseJson = await response.json()
+    // let statusValue = responseJson.status
+    // let messageValue = responseJson.message
+    // let successValue = responseJson.isSuccess
+    // console.log(responseJson);
+    // // localStorage.setItem("statusValue", statusValue)
+    // console.log("userName = ", JSON.stringify(body.username), "fullName = ", JSON.stringify(body.fullname), "email = ", JSON.stringify(body.email), "phoneNumber = ", JSON.stringify(body.phoneNumber), "gender = ", JSON.stringify(body.gender), "adress = ", JSON.stringify(body.address), "password = ", JSON.stringify(body.password), "confirmPassword = ", JSON.stringify(body.confirmPassword))
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const address = document.querySelector("#address")
-address.addEventListener("input", () => {
-    let value = address.value
-    let input = address
-    const regex = /^[a-zA-Z0-9üÜğĞıİşŞöÖçÇ\s\/\.\:\,\d]{15,}$/
-    const testAddress = regex.test(value)
-    if (value.length == 0) {
-        input.classList.remove("activeInput");
-        input.classList.remove("unActiveInput");
-        input.style.borderColor = "";
-    } else {
-        input.classList.remove("unActiveInput");
-        input.style.borderColor = "red";
+// const address = document.querySelector("#address")
+// address.addEventListener("input", () => {
+//     let value = address.value
+//     let input = address
+//     const regex = /^[a-zA-Z0-9üÜğĞıİşŞöÖçÇ\s\/\.\:\,\d]{15,}$/
+//     const testAddress = regex.test(value)
+//     if (value.length == 0) {
+//         input.classList.remove("activeInput");
+//         input.classList.remove("unActiveInput");
+//         input.style.borderColor = "";
+//     } else {
+//         input.classList.remove("unActiveInput");
+//         input.style.borderColor = "red";
 
-        if (testAddress) {
-            input.classList.add("activeInput");
-            input.style.borderColor = "";
+//         if (testAddress) {
+//             input.classList.add("activeInput");
+//             input.style.borderColor = "";
 
-        } else {
-            input.classList.add("unActiveInput");
-            input.style.borderColor = "red";
+//         } else {
+//             input.classList.add("unActiveInput");
+//             input.style.borderColor = "red";
 
-        }
-    }
-})
+//         }
+//     }
+// })
 
-const Inputs = document.querySelectorAll("input")
-Inputs.forEach(input => {
-    input.addEventListener("input", function () {
+function checkDeneme() {
+    const Inputs = document.querySelectorAll("input")
+    Inputs.forEach(input => {
         const inputId = input.id
         const inputValue = input.value
         const infoSpan = input.parentElement.querySelector(".giveInfo")
@@ -74,24 +75,24 @@ Inputs.forEach(input => {
                 checkPassword(input, inputValue, infoSpan)
                 break;
             case "againPassword":
-                checkAgainPassword(input, inputValue)
+                checkAgainPassword(input, inputValue, infoSpan)
                 break;
             case "name":
                 checkName(input, inputValue, infoSpan)
                 break;
             case "phoneNumber":
-                checkPhoneNumber(input, inputValue)
+                checkPhoneNumber(input, inputValue, infoSpan)
                 break;
             case "email":
-                checkEmail(input, inputValue)
+                checkEmail(input, inputValue, infoSpan)
                 break;
             case "address":
                 checkAddress(input, inputValue)
                 break;
         }
     })
-})
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function checkUserName(input, value, infoSpan) { //en az bir büyük harf ve uzunluğu 3 veya daha fazla 
     const regex = /^(?=.*[A-Z])[A-Za-z0-9]*[A-Za-z0-9]{3,}$/
     const testUserName = regex.test(value)
@@ -105,13 +106,21 @@ function checkUserName(input, value, infoSpan) { //en az bir büyük harf ve uzu
         infoSpan.style.color = "#88b916"
         input.classList.toggle("unActiveInput", !testUserName);
         input.style.borderColor = testUserName ? "" : "red";
-        infoSpan.style.color = input.classList.contains("activeInput") ? "#88b916" : "red";
+        if (input.classList.contains("activeInput")) {
+            infoSpan.style.color = "#88b916"
+            infoSpan.style.display = ""
+        } else {
+            infoSpan.style.color = "red"
+            infoSpan.style.display = "block"
+        }
+
     }
 }
 
 function checkPassword(input, value, infoSpan) { // en az bir büyük harf bir sayı ve uzunluğu 5'i geçecek
     const regex = /^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/
     const testPassword = regex.test(value)
+
     if (value.length == 0) {
         input.classList.remove("activeInput", "unActiveInput");
         input.style.borderColor = "";
@@ -120,11 +129,17 @@ function checkPassword(input, value, infoSpan) { // en az bir büyük harf bir s
         input.classList.toggle("activeInput", testPassword);
         input.classList.toggle("unActiveInput", !testPassword);
         input.style.borderColor = testPassword ? "" : "red";
-        infoSpan.style.color = input.classList.contains("activeInput") ? "#88b916" : "red";
+        if (input.classList.contains("activeInput")) {
+            infoSpan.style.color = "#88b916"
+            infoSpan.style.display = ""
+        } else {
+            infoSpan.style.color = "red"
+            infoSpan.style.display = "block"
+        }
     }
 }
 
-function checkAgainPassword(input, value) {// password.value ile eşit olacak 
+function checkAgainPassword(input, value, infoSpan) {// password.value ile eşit olacak 
     const exPassword = document.querySelector("#password").value
     const regex = /^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/;
     const testAgainPassword = regex.test(value);
@@ -135,6 +150,13 @@ function checkAgainPassword(input, value) {// password.value ile eşit olacak
     } else {
         input.classList.toggle("activeInput", testAgainPassword && exPassword === value);
         input.classList.toggle("unActiveInput", !testAgainPassword || exPassword !== value);
+        if (input.classList.contains("activeInput")) {
+            infoSpan.style.color = "#88b916"
+            infoSpan.style.display = ""
+        } else {
+            infoSpan.style.color = "red"
+            infoSpan.style.display = "block"
+        }
     }
 }
 
@@ -154,15 +176,17 @@ function checkName(input, value, infoSpan) { // sadece büyük harf ve küçük 
             input.classList.add("activeInput");
             input.style.borderColor = "";
             infoSpan.style.color = "#88b916";
+            infoSpan.style.display = ""
         } else {
             input.classList.add("unActiveInput");
             input.style.borderColor = "red";
             infoSpan.style.color = "red";
+            infoSpan.style.display = "block"
         }
     }
 }
 
-function checkPhoneNumber(input, value) { // bu sıkıntılı bakılacak
+function checkPhoneNumber(input, value, infoSpan) { // bu sıkıntılı bakılacak
     value = value.replace(/\D/g, "");
     // sadece sayılardan oluşan bir string yap
     let formattedNumber = "";
@@ -184,20 +208,22 @@ function checkPhoneNumber(input, value) { // bu sıkıntılı bakılacak
     } else {
         input.classList.remove("unActiveInput");
         input.style.borderColor = "red";
+        infoSpan.style.color = "red";
+        infoSpan.style.display = "block"
 
         if (value.length >= 10) {
             input.classList.add("activeInput");
-            input.style.borderColor = "";
+            input.style.borderColor = "#88b916";
+            infoSpan.style.display = ""
 
         } else {
             input.classList.add("unActiveInput");
             input.style.borderColor = "red";
-
         }
     }
 }
 
-function checkEmail(input, value) {
+function checkEmail(input, value, infoSpan) {
     value = value.trim();
     const domain = value.slice(value.indexOf("@") + 1);
     const regex = /^[^\s@]+@[^\s@]+\.[a-z]{3}$/i
@@ -206,14 +232,18 @@ function checkEmail(input, value) {
         input.style.borderColor = '';
     } else if ((testEmail && domain == "hotmail.com") || (testEmail && domain == "gmail.com")) {
         input.style.borderColor = '#88b916';
+        infoSpan.style.display = ""
+        infoSpan.style.color = "#88b916";
     } else {
+        infoSpan.style.color = "red";
         input.style.borderColor = 'red';
+        infoSpan.style.display = "block"
     }
 }
 
-function checkAddress(input, value) {
-    console.log(value);
-}
+// function checkAddress(input, value) {
+//     console.log(value);
+// }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function clickbuton() {

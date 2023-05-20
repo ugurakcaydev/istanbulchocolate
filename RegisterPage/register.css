@@ -49,11 +49,13 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
+  gap: 1rem;
 }
 
 form .user-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
+  height: 85px;
 }
 
 form .input-box span.details {
@@ -237,4 +239,13 @@ form .reminder .loginpage a:hover {
 
 .textA {
   cursor: pointer;
+}
+
+#giveInfoUserName,
+#giveInfoName,
+#giveInfoPassword,
+#giveInfoPasswordAgain,
+#giveInfoNumber,
+#giveInfoMail {
+  display: none;
 }

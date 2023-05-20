@@ -17,8 +17,7 @@
         <div class="user-details">
           <div class="input-box">
             <label class="details">Kullanıcı Adı</label>
-            <input id="userName" type="text" placeholder="Kullanıcı adını giriniz" autocomplete="off" tabindex="1"
-              pattern="(?=.*[A-Z])[A-Za-z0-9]*[A-Za-z0-9]{3,}">
+            <input id="userName" type="text" placeholder="Kullanıcı adını giriniz" autocomplete="off" tabindex="1" required>
             <span id="giveInfoUserName" class="giveInfo">" Kullanıcı adı en az 3 harf ve bir büyük harf içermelidir.
               "</span>
           </div>
@@ -36,15 +35,18 @@
           <div class="input-box">
             <label class="details">Telefon Numarası(+90)</label>
             <input id="phoneNumber" type="text" placeholder="5** *** ** **" autocomplete="off" tabindex="5">
+            <span id="giveInfoNumber" class="giveInfo">"Telefon numarası 11 haneli olmalıdır"</span>
           </div>
           <div class="input-box">
             <label class="details">Parola Tekrar</label>
             <input id="againPassword" type="text" placeholder="Şifrenizi tekrar giriniz" autocomplete="off"
               tabindex="3">
+            <span id="giveInfoPasswordAgain" class="giveInfo">"Parolalar Eşleşmiyor"</span>
           </div>
           <div class="input-box">
             <label class="details">E-Mail</label>
             <input id="email" type="email" placeholder="E-mail giriniz" autocomplete="off" tabindex="6">
+            <span id="giveInfoMail" class="giveInfo">"E-Posta Geçersiz"</span>
           </div>
         </div>
         <div class="gender-details">
