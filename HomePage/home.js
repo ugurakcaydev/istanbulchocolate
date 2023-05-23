@@ -78,10 +78,10 @@ const swiper = new Swiper('.swiper', {
         shadowOffset: 20,
         shadowScale: 0.94,
     },
-    pagination: {
-        el: ".swiper-pagination",
+    // pagination: {
+    //     el: ".swiper-pagination",
 
-    },
+    // },
     autoplay: {
         delay: 4000,
         disableOnInteraction: false,

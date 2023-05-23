@@ -25,7 +25,7 @@ issuccessButton.addEventListener("click", async (event) => {
                     },
                 })
                 const responseData = await response.json(); // Yanıtı JSON olarak almak için
-                console.log(responseData);
+
             } else {
                 event.preventDefault()
             }
@@ -49,8 +49,7 @@ const getProduct = async () => {
         const data = await response.json();
 
         data.forEach(item => {
-            // productsObject.productImage = `../images/${item.productName}.jpg`
-            productsObject.productId = item.ProductId
+            productsObject.productImage = `../images/${item.ProductName}.png`
             productsObject.productNames = item.ProductName
             productsObject.productPrice = item.Price
             addProduct(item);
@@ -68,11 +67,10 @@ function addProduct(item) {
 
     let fotoDİv = document.createElement("div")
     fotoDİv.classList.add("fotodiv")
-    // let productImg = document.createElement("img")
-    // productImg.classList.add("productImg")
-    // productImg.src = productsObject.productImage
-    fotoDİv.innerHTML = item.ProductId
-    // fotoDİv.appendChild(productImg)
+    let productImg = document.createElement("img")
+    productImg.classList.add("productImg")
+    productImg.src = productsObject.productImage
+    fotoDİv.appendChild(productImg)
     anadiv.appendChild(fotoDİv)
 
     let yaziDİv = document.createElement("div")
@@ -103,15 +101,9 @@ function addProduct(item) {
     addButton.addEventListener("click", () => {
         let productName = addButton.parentElement.parentElement.querySelector("#ürünname").textContent
         let productPrice = addButton.parentElement.parentElement.querySelector("#price").textContent
-        let productId = addButton.parentElement.parentElement.querySelector(".fotodiv").textContent
+        let productImage = addButton.parentElement.parentElement.querySelector(".productImg").src
         let floatPrice = parseFloat(productPrice)
-        let intId = parseInt(productId)
-
-        addProductToObject(intId, productName, floatPrice)
-        // if (issuccess1Button.innerHTML == "Sepetim") {
-        //     let uniqueArr = [...new Set(productsObject)];
-        //     addToastMessage(uniqueArr)
-        // }
+        addProductToObject(productName, floatPrice, productImage)
     })
 
     addButton.style.transition = "transform 0.1s ease";
@@ -124,17 +116,17 @@ function addProduct(item) {
 
 }
 
-function addProductToObject(productId, productName, productPrice) {
+function addProductToObject(productName, productPrice, productImage) {
     let currentCart = JSON.parse(localStorage.getItem("Cart"))
-    const existingProduct = currentCart.find(product => product.productId === productId);
+    const existingProduct = currentCart.find(product => product.productName === productName);
     if (existingProduct) {
         ++existingProduct.productClick
         addToastMessage(existingProduct)
     } else {
         const newProduct = {
-            productId: productId,
             productName: productName,
             productPrice: productPrice,
+            productImage: productImage,
             productClick: 1
         };
         currentCart.push(newProduct);

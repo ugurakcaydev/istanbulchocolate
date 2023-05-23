@@ -7,7 +7,7 @@ basketProductArray.forEach(product => {
     Cart(product)
 })
 function Cart(product) {
-
+    console.log(product.productClick);
     let cartProductDiv = document.createElement("div")
     cartProductDiv.classList.add("cartProduct")
     cartProducts.appendChild(cartProductDiv)
@@ -19,6 +19,7 @@ function Cart(product) {
     let imageDivDom = document.createElement("div")
     let imgDom = document.createElement("img")
     imageDivDom.classList.add("image")
+    imgDom.src = product.productImage
     imageDivDom.appendChild(imgDom)
     leftCart.appendChild(imageDivDom)
 
@@ -45,6 +46,7 @@ function Cart(product) {
         }
         showPrice.innerHTML = ` ${calculatePrice(product.productClick, product.productPrice)} TL`
         calculateTotalPrice(basketProductArray)
+        localStorage.setItem("Cart", JSON.stringify(basketProductArray))
     })
 
     let counter = document.createElement("div")
@@ -57,10 +59,13 @@ function Cart(product) {
     addButton.innerHTML = "+"
     buttons.appendChild(addButton)
     addButton.addEventListener("click", () => {
-        counter.innerHTML = ++product.productClick
+        product.productClick++
+        counter.innerHTML = product.productClick
         showPrice.innerHTML = ` ${calculatePrice(product.productClick, product.productPrice)} TL`
         subtractButton.disabled = false
         calculateTotalPrice(basketProductArray)
+
+        localStorage.setItem("Cart", JSON.stringify(basketProductArray))
     })
 
     let showPrice = document.createElement("div")
